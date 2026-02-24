@@ -70,6 +70,18 @@ const routes: RouteRecordRaw[] = [
     meta: { requiresAuth: false }
   },
   {
+    path: '/portfolio',
+    name: 'Portfolio',
+    component: () => import('@/views/Portfolio.vue'),
+    meta: { requiresAuth: false }
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: () => import('@/views/Contact.vue'),
+    meta: { requiresAuth: false }
+  },
+  {
     path: '/search',
     name: 'Search',
     component: () => import('@/views/Search.vue'),
