@@ -6,15 +6,15 @@
   >
     <div class="fixed inset-0 bg-black bg-opacity-50"></div>
     <div
-      class="fixed left-0 top-0 bottom-0 w-64 bg-white shadow-xl overflow-y-auto"
+      class="fixed left-0 top-0 bottom-0 w-64 bg-cyber-900 shadow-xl overflow-y-auto border-r border-cyber-800"
       @click.stop
     >
       <div class="p-4">
         <div class="flex items-center justify-between mb-6">
-          <span class="text-xl font-bold text-primary-600">Menu</span>
+          <span class="text-xl font-bold text-neon">Menu</span>
           <button
             @click="$emit('close')"
-            class="p-2 hover:bg-gray-100 rounded-lg"
+            class="p-2 text-cyber-200 hover:bg-cyber-800 hover:text-white rounded-lg transition-colors"
           >
             <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -22,24 +22,24 @@
           </button>
         </div>
 
-        <nav class="space-y-2">
+        <nav class="space-y-1">
           <router-link
             to="/"
-            class="block px-4 py-2 rounded-lg hover:bg-gray-100"
+            class="block px-4 py-2 rounded-lg text-cyber-200 hover:bg-cyber-800 hover:text-white transition-colors"
             @click="$emit('close')"
           >
             Home
           </router-link>
           <router-link
             to="/products"
-            class="block px-4 py-2 rounded-lg hover:bg-gray-100"
+            class="block px-4 py-2 rounded-lg text-cyber-200 hover:bg-cyber-800 hover:text-white transition-colors"
             @click="$emit('close')"
           >
             Products
           </router-link>
           <router-link
             to="/services"
-            class="block px-4 py-2 rounded-lg hover:bg-gray-100"
+            class="block px-4 py-2 rounded-lg text-cyber-200 hover:bg-cyber-800 hover:text-white transition-colors"
             @click="$emit('close')"
           >
             Services
@@ -47,7 +47,7 @@
           <router-link
             v-if="isAuthenticated"
             to="/cart"
-            class="block px-4 py-2 rounded-lg hover:bg-gray-100"
+            class="block px-4 py-2 rounded-lg text-cyber-200 hover:bg-cyber-800 hover:text-white transition-colors"
             @click="$emit('close')"
           >
             Cart
@@ -55,7 +55,7 @@
           <router-link
             v-if="isAuthenticated"
             to="/orders"
-            class="block px-4 py-2 rounded-lg hover:bg-gray-100"
+            class="block px-4 py-2 rounded-lg text-cyber-200 hover:bg-cyber-800 hover:text-white transition-colors"
             @click="$emit('close')"
           >
             Orders
@@ -63,7 +63,7 @@
           <router-link
             v-if="isAuthenticated"
             to="/wishlist"
-            class="block px-4 py-2 rounded-lg hover:bg-gray-100"
+            class="block px-4 py-2 rounded-lg text-cyber-200 hover:bg-cyber-800 hover:text-white transition-colors"
             @click="$emit('close')"
           >
             Wishlist
@@ -71,7 +71,7 @@
           <router-link
             v-if="isAuthenticated && isAdmin"
             to="/admin"
-            class="block px-4 py-2 rounded-lg hover:bg-gray-100"
+            class="block px-4 py-2 rounded-lg text-cyber-200 hover:bg-cyber-800 hover:text-white transition-colors"
             @click="$emit('close')"
           >
             Admin Panel

@@ -48,7 +48,7 @@ const variantClasses = computed(() => {
     case 'danger':
       return 'btn-danger'
     case 'outline':
-      return 'border-2 border-primary-600 text-primary-600 hover:bg-primary-50'
+      return 'border-2 border-neon text-neon hover:bg-neon/10'
     default:
       return 'btn-primary'
   }
@@ -68,13 +68,13 @@ const sizeClasses = computed(() => {
 const focusRingClasses = computed(() => {
   switch (props.variant) {
     case 'primary':
-      return 'focus:ring-primary-500'
+      return 'focus:ring-neon'
     case 'secondary':
       return 'focus:ring-gray-500'
     case 'danger':
       return 'focus:ring-red-500'
     default:
-      return 'focus:ring-primary-500'
+      return 'focus:ring-neon'
   }
 })
 </script>

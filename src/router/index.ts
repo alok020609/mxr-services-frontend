@@ -6,8 +6,68 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'Home',
+    component: () => import('@/views/temp4/HomeTemp4.vue'),
+    meta: { requiresAuth: false }
+  },
+  {
+    path: '/temp1frontend',
+    name: 'Temp1Frontend',
+    component: () => import('@/views/temp1/HomeTemp1.vue'),
+    meta: { requiresAuth: false }
+  },
+  {
+    path: '/temp2frontend',
+    name: 'Temp2Frontend',
     component: () => import('@/views/Home.vue'),
     meta: { requiresAuth: false }
+  },
+  {
+    path: '/temp3frontend',
+    name: 'Temp3Frontend',
+    component: () => import('@/views/temp3/HomeTemp3.vue'),
+    meta: { requiresAuth: false }
+  },
+  {
+    path: '/temp4frontend',
+    name: 'Temp4Frontend',
+    component: () => import('@/views/temp4/HomeTemp4.vue'),
+    meta: { requiresAuth: false }
+  },
+  {
+    path: '/packages',
+    name: 'Packages',
+    component: () => import('@/views/temp4/PackagesTemp4.vue'),
+    meta: { requiresAuth: false }
+  },
+  {
+    path: '/temp4frontend/packages',
+    name: 'Temp4Packages',
+    component: () => import('@/views/temp4/PackagesTemp4.vue'),
+    meta: { requiresAuth: false }
+  },
+  {
+    path: '/temp4frontend/products',
+    name: 'Temp4Products',
+    component: () => import('@/views/temp4/ProductsTemp4.vue'),
+    meta: { requiresAuth: false }
+  },
+  {
+    path: '/temp4frontend/cart',
+    name: 'Temp4Cart',
+    component: () => import('@/views/temp4/CartTemp4.vue'),
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/temp4frontend/orders',
+    name: 'Temp4Orders',
+    component: () => import('@/views/temp4/OrdersTemp4.vue'),
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/temp4frontend/orders/:id',
+    name: 'Temp4OrderDetail',
+    component: () => import('@/views/temp4/OrderDetailTemp4.vue'),
+    meta: { requiresAuth: true }
   },
   {
     path: '/login',
@@ -48,7 +108,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/products',
     name: 'Products',
-    component: () => import('@/views/Products.vue'),
+    component: () => import('@/views/temp4/ProductsTemp4.vue'),
     meta: { requiresAuth: false }
   },
   {
@@ -90,7 +150,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/cart',
     name: 'Cart',
-    component: () => import('@/views/Cart.vue'),
+    component: () => import('@/views/temp4/CartTemp4.vue'),
     meta: { requiresAuth: true }
   },
   {
@@ -102,13 +162,13 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/orders',
     name: 'Orders',
-    component: () => import('@/views/Orders.vue'),
+    component: () => import('@/views/temp4/OrdersTemp4.vue'),
     meta: { requiresAuth: true }
   },
   {
     path: '/orders/:id',
     name: 'OrderDetail',
-    component: () => import('@/views/OrderDetail.vue'),
+    component: () => import('@/views/temp4/OrderDetailTemp4.vue'),
     meta: { requiresAuth: true }
   },
   {
@@ -330,6 +390,11 @@ const routes: RouteRecordRaw[] = [
         component: () => import('@/views/admin/Settings.vue')
       },
       {
+        path: 'mail-settings',
+        name: 'AdminMailSettings',
+        component: () => import('@/views/admin/MailSettings.vue')
+      },
+      {
         path: 'payment-gateways',
         name: 'AdminPaymentGateways',
         component: () => import('@/views/admin/PaymentGateways.vue')
@@ -338,6 +403,16 @@ const routes: RouteRecordRaw[] = [
         path: 'email-services',
         name: 'AdminEmailServices',
         component: () => import('@/views/admin/EmailServices.vue')
+      },
+      {
+        path: 'contact-submissions',
+        name: 'AdminContactSubmissions',
+        component: () => import('@/views/admin/ContactSubmissions.vue')
+      },
+      {
+        path: 'contact-submissions/:id',
+        name: 'AdminContactSubmissionDetail',
+        component: () => import('@/views/admin/ContactSubmissionDetail.vue')
       },
       {
         path: 'services',

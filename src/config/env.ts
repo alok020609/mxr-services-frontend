@@ -41,6 +41,10 @@ export const env = {
   // Optional: Feature Flags Service
   featureFlagsUrl: import.meta.env.VITE_FEATURE_FLAGS_URL,
   
+  // Optional: Contact / WhatsApp (for Contact page, WhatsApp float, header/footer)
+  contactPhone: import.meta.env.VITE_CONTACT_PHONE as string | undefined,
+  whatsappNumber: (import.meta.env.VITE_WHATSAPP_NUMBER as string)?.replace(/\D/g, '') || undefined,
+  
   // API Logging Configuration
   enableApiLogging: import.meta.env.VITE_ENABLE_API_LOGGING !== 'false' && (import.meta.env.DEV || import.meta.env.VITE_ENABLE_API_LOGGING === 'true'),
   apiLogLevel: (import.meta.env.VITE_API_LOG_LEVEL || (import.meta.env.DEV ? 'all' : 'errors')) as 'none' | 'errors' | 'all',

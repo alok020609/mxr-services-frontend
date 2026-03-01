@@ -32,6 +32,15 @@ dist-ssr
 !.env.production.example
 !.env.development.example
 
+# Environment files - only .example versions are committed
+.env.development
+.env.production
+.env.test
+
+# Test coverage
+coverage/
+*.lcov
+
 # Build outputs
 *.tsbuildinfo
 

@@ -1,8 +1,10 @@
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4">
+  <div>
+    <Header />
+    <main class="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-sgBgDark py-12 px-4">
     <div class="max-w-md w-full space-y-8">
       <div>
-        <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h2>
+        <h2 class="mt-6 text-center text-3xl font-extrabold text-slate-900 dark:text-white">Sign in to your account</h2>
       </div>
       <form class="mt-8 space-y-6" @submit.prevent="handleLogin">
         <!-- General error message -->
@@ -46,13 +48,13 @@
               id="remember-me"
               v-model="rememberMe"
               type="checkbox"
-              class="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
+              class="h-4 w-4 text-sgPrimary focus:ring-sgPrimary border-slate-300 dark:border-slate-600 rounded"
             />
-            <label for="remember-me" class="ml-2 block text-sm text-gray-900"> Remember me </label>
+            <label for="remember-me" class="ml-2 block text-sm text-slate-900 dark:text-white"> Remember me </label>
           </div>
 
           <div class="text-sm">
-            <router-link to="/forgot-password" class="font-medium text-primary-600 hover:text-primary-500">
+            <router-link to="/forgot-password" class="font-medium text-sgPrimary hover:opacity-90">
               Forgot your password?
             </router-link>
           </div>
@@ -67,10 +69,10 @@
         <div v-if="showSocialLogin" class="space-y-3">
           <div class="relative">
             <div class="absolute inset-0 flex items-center">
-              <div class="w-full border-t border-gray-300" />
+            <div class="w-full border-t border-slate-200 dark:border-slate-700" />
             </div>
             <div class="relative flex justify-center text-sm">
-              <span class="bg-gray-50 px-2 text-gray-600">Or continue with</span>
+              <span class="bg-slate-50 dark:bg-sgBgDark px-2 text-slate-600 dark:text-slate-400">Or continue with</span>
             </div>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -96,13 +98,15 @@
         </div>
 
         <div class="text-center">
-          <span class="text-sm text-gray-600">Don't have an account? </span>
-          <router-link to="/register" class="font-medium text-primary-600 hover:text-primary-500">
+          <span class="text-sm text-slate-600 dark:text-slate-400">Don't have an account? </span>
+          <router-link to="/register" class="font-medium text-sgPrimary hover:opacity-90">
             Sign up
           </router-link>
         </div>
       </form>
     </div>
+    </main>
+    <Footer />
   </div>
 </template>
 
@@ -114,6 +118,8 @@ import { useUIStore } from '@/stores/ui'
 import { authApi } from '@/api/endpoints/auth'
 import Button from '@/components/common/Button.vue'
 import Input from '@/components/common/Input.vue'
+import Header from '@/components/layout/Header.vue'
+import Footer from '@/components/layout/Footer.vue'
 import type { AxiosError } from 'axios'
 import { getValidationErrors, extractErrorMessage } from '@/utils/errorHandler'
 import { sendToTerminal } from '@/utils/apiLogger'

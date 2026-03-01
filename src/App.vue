@@ -1,17 +1,24 @@
 <template>
   <div id="app">
     <RouterView />
+    <WhatsAppFloat v-if="showWhatsAppFloat" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue'
-import { RouterView } from 'vue-router'
+import { onMounted, computed } from 'vue'
+import { RouterView, useRoute } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
-import { useRouter } from 'vue-router'
+import WhatsAppFloat from '@/components/layout/WhatsAppFloat.vue'
 
 const authStore = useAuthStore()
-const router = useRouter()
+const route = useRoute()
+
+const showWhatsAppFloat = computed(() =>
+  !route.path.startsWith('/admin') &&
+  !route.path.startsWith('/vendor') &&
+  !route.path.startsWith('/temp1frontend')
+)
 
 onMounted(() => {
   // Verify user is loaded from localStorage

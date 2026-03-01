@@ -18,7 +18,7 @@
   }
   
   .btn-primary {
-    @apply bg-primary-600 text-white hover:bg-primary-700;
+    @apply bg-neon text-cyber-950 hover:bg-neon-hover;
   }
   
   .btn-secondary {
@@ -30,7 +30,7 @@
   }
   
   .input {
-    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-neon focus:border-transparent;
   }
   
   .card {

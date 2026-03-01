@@ -170,6 +170,20 @@
           Email Services
         </router-link>
         <router-link
+          to="/admin/contact-submissions"
+          :class="[
+            'flex items-center px-4 py-3 rounded-lg transition-all duration-200',
+            isActive('/admin/contact-submissions') 
+              ? 'bg-primary-600 text-white shadow-lg' 
+              : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+          ]"
+        >
+          <svg class="h-5 w-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          Contact Submissions
+        </router-link>
+        <router-link
           to="/admin/services"
           :class="[
             'flex items-center px-4 py-3 rounded-lg transition-all duration-200',
@@ -463,6 +477,20 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
           </svg>
           Settings
+        </router-link>
+        <router-link
+          to="/admin/mail-settings"
+          :class="[
+            'flex items-center px-4 py-3 rounded-lg transition-all duration-200',
+            isActive('/admin/mail-settings') 
+              ? 'bg-primary-600 text-white shadow-lg' 
+              : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+          ]"
+        >
+          <svg class="h-5 w-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          Mail Settings
         </router-link>
         <router-link
           to="/admin/currencies"

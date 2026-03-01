@@ -70,5 +70,27 @@ export const supportApi = {
   closeTicket: async (ticketId: string): Promise<ApiResponse<SupportTicket>> => {
     const response = await apiClient.put(`/support/tickets/${ticketId}/close`)
     return response.data
+  },
+
+  submitContact: async (body: {
+    name: string
+    email: string
+    message: string
+    phone?: string
+    freeSiteVisit?: boolean
+  }): Promise<ApiResponse<{ id: string; createdAt: string }>> => {
+    const payload: Record<string, unknown> = {
+      name: body.name.trim(),
+      email: body.email.trim(),
+      message: body.message.trim()
+    }
+    if (body.phone != null && body.phone !== '') {
+      payload.phone = body.phone.trim()
+    }
+    if (body.freeSiteVisit === true) {
+      payload.freeSiteVisit = true
+    }
+    const response = await apiClient.post('/support/contact', payload)
+    return response.data
   }
 }

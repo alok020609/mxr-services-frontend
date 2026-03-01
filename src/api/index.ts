@@ -67,6 +67,8 @@ export { inventoryApi } from './endpoints/inventory'
 export { inventoryAdvancedApi } from './endpoints/inventory-advanced'
 export { paymentGatewaysApi } from './endpoints/payment-gateways'
 export { emailServicesApi } from './endpoints/email-services'
+export { adminContactApi } from './endpoints/admin-contact'
+export { adminMailSettingsApi } from './endpoints/admin-mail-settings'
 
 // Advanced Admin Features
 export { disasterRecoveryApi } from './endpoints/disaster-recovery'

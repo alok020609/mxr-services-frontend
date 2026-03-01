@@ -1,8 +1,10 @@
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4">
+  <div>
+    <Header />
+    <main class="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-sgBgDark py-12 px-4">
     <div class="max-w-md w-full space-y-8">
       <div>
-        <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Create your account</h2>
+        <h2 class="mt-6 text-center text-3xl font-extrabold text-slate-900 dark:text-white">Create your account</h2>
       </div>
       <form class="mt-8 space-y-6" @submit.prevent="handleRegister">
         <div class="space-y-4">
@@ -59,13 +61,13 @@
           />
         </div>
 
-        <div v-if="generalError" class="rounded-lg bg-red-50 p-3 text-sm text-red-700">
+        <div v-if="generalError" class="rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 p-3 text-sm text-red-700 dark:text-red-300">
           {{ generalError }}
           <template v-if="generalError === 'This email is already registered.'">
             <span class="mt-2 block">
-              <router-link to="/login" class="font-medium text-primary-600 hover:text-primary-500">Log in</router-link>
+              <router-link to="/login" class="font-medium text-sgPrimary hover:opacity-90">Log in</router-link>
               or
-              <router-link to="/forgot-password" class="font-medium text-primary-600 hover:text-primary-500">Forgot password?</router-link>
+              <router-link to="/forgot-password" class="font-medium text-sgPrimary hover:opacity-90">Forgot password?</router-link>
             </span>
           </template>
         </div>
@@ -77,13 +79,15 @@
         </div>
 
         <div class="text-center">
-          <span class="text-sm text-gray-600">Already have an account? </span>
-          <router-link to="/login" class="font-medium text-primary-600 hover:text-primary-500">
+          <span class="text-sm text-slate-600 dark:text-slate-400">Already have an account? </span>
+          <router-link to="/login" class="font-medium text-sgPrimary hover:opacity-90">
             Sign in
           </router-link>
         </div>
       </form>
     </div>
+    </main>
+    <Footer />
   </div>
 </template>
 
@@ -94,6 +98,8 @@ import { useUIStore } from '@/stores/ui'
 import { authApi } from '@/api/endpoints/auth'
 import Button from '@/components/common/Button.vue'
 import Input from '@/components/common/Input.vue'
+import Header from '@/components/layout/Header.vue'
+import Footer from '@/components/layout/Footer.vue'
 
 const router = useRouter()
 const uiStore = useUIStore()
