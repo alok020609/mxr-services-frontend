@@ -5,6 +5,7 @@ import { env } from '@/config/env'
  * Send log message to terminal via Vite dev server
  */
 export function sendToTerminal(level: 'log' | 'error' | 'warn', ...args: any[]): void {
+  if (!env.isDevelopment) return
   try {
     const message = args.map(arg => {
       if (typeof arg === 'object') {

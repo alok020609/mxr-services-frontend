@@ -7,6 +7,7 @@ import type { Plugin } from 'vite'
 export function terminalLogger(): Plugin {
   return {
     name: 'terminal-logger',
+    apply: 'serve',
     configureServer(server) {
       // Add middleware to handle log requests from browser
       server.middlewares.use('/__terminal-log', (req, res, next) => {
