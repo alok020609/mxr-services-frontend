@@ -38,10 +38,8 @@ export function extractErrorMessage(error: AxiosError): string {
     if (error.code === 'ECONNABORTED') {
       return 'Request timeout. Please try again.'
     }
-    if (error.code === 'ERR_NETWORK') {
-      return 'Network error. Please check your internet connection.'
-    }
-    return 'Connection failed. Please check your internet connection.'
+    // ERR_NETWORK and other no-response cases (e.g. ERR_NAME_NOT_RESOLVED, server unreachable)
+    return 'Cannot reach the server. Check your internet connection and ensure the API is running.'
   }
 
   const responseData = error.response.data as ApiErrorResponse | any
@@ -100,7 +98,12 @@ export function getDefaultErrorMessage(status: number): string {
  * Get user-friendly message for authentication errors
  */
 export function getAuthErrorMessage(error: AxiosError): string {
-  const status = error.response?.status
+  // Network error (no response): server unreachable, wrong API URL, or DNS failure
+  if (!error.response) {
+    return 'Cannot reach the login server. Check your connection and that the backend API is running.'
+  }
+
+  const status = error.response.status
   const extractedMessage = extractErrorMessage(error)
 
   // Custom messages for auth errors
@@ -154,6 +157,10 @@ export function logError(error: AxiosError, context?: string): void {
   // Use API logger for formatted error logging
   // The API logger will handle all formatting and display
   logApiError(error)
+
+  if (import.meta.env.DEV && isNetworkError(error)) {
+    console.info('Tip: If using a custom API URL, ensure the backend is running and VITE_API_BASE_URL (or proxy target) is correct.')
+  }
   
   // Additional context-specific logging if needed
   if (context) {

@@ -121,7 +121,7 @@ import Input from '@/components/common/Input.vue'
 import Header from '@/components/layout/Header.vue'
 import Footer from '@/components/layout/Footer.vue'
 import type { AxiosError } from 'axios'
-import { getValidationErrors, extractErrorMessage } from '@/utils/errorHandler'
+import { getValidationErrors, getAuthErrorMessage } from '@/utils/errorHandler'
 import { sendToTerminal } from '@/utils/apiLogger'
 import { useAuth } from '@/composables/useAuth'
 import { useGoogleSignIn } from '@/composables/useGoogleSignIn'
@@ -216,8 +216,8 @@ const handleLogin = async () => {
     } else {
       // Show authentication error with user-friendly message
       uiStore.showAuthError(axiosError)
-      // Extract error message for display
-      generalError.value = extractErrorMessage(axiosError)
+      // Use auth-specific message (includes network/unreachable server messaging)
+      generalError.value = getAuthErrorMessage(axiosError)
     }
   } finally {
     isLoading.value = false
