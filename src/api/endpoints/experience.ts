@@ -67,7 +67,7 @@ export const experienceApi = {
       return response.data
     } catch (putError: any) {
       // If PUT fails with 400 and the error suggests wrong method, try alternatives
-      const errorMsg = putError.response?.data?.error || putError.message || ''
+      void (putError.response?.data?.error || putError.message || '')
       
       // Try POST (in case backend expects POST for creating answers)
       if (putError.response?.status === 400 || putError.response?.status === 405) {

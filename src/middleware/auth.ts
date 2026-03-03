@@ -3,7 +3,7 @@ import type { NavigationGuardNext, RouteLocationNormalized } from 'vue-router'
 
 export const requireAuth = (
   to: RouteLocationNormalized,
-  from: RouteLocationNormalized,
+  _from: RouteLocationNormalized,
   next: NavigationGuardNext
 ) => {
   const authStore = useAuthStore()
@@ -17,7 +17,7 @@ export const requireAuth = (
 
 export const requireAdmin = (
   to: RouteLocationNormalized,
-  from: RouteLocationNormalized,
+  _from: RouteLocationNormalized,
   next: NavigationGuardNext
 ) => {
   const authStore = useAuthStore()
@@ -32,8 +32,8 @@ export const requireAdmin = (
 }
 
 export const guestOnly = (
-  to: RouteLocationNormalized,
-  from: RouteLocationNormalized,
+  _to: RouteLocationNormalized,
+  _from: RouteLocationNormalized,
   next: NavigationGuardNext
 ) => {
   const authStore = useAuthStore()

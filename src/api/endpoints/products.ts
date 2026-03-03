@@ -1,6 +1,5 @@
 import apiClient from '../client'
 import type { Product, Category, ProductFilters, CreateProductRequest, ApiResponse, PaginatedResponse } from '../types'
-import { handleApiCall } from '../helpers'
 
 export const productsApi = {
   // Get products list

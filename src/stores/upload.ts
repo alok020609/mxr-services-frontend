@@ -1,14 +1,14 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import { mediaApi } from '@/api/endpoints/media'
-import type { ImageData } from '@/api/endpoints/media'
+import type { MediaImage } from '@/api/types'
 
 export interface UploadState {
   uploadId: string
   file: File
   status: 'pending' | 'uploading' | 'processing' | 'completed' | 'failed'
   progress: number
-  result?: ImageData
+  result?: MediaImage
   error?: string
   uploadedBytes?: number
   totalBytes?: number
@@ -81,7 +81,7 @@ export const useUploadStore = defineStore('upload', () => {
     }
   }
 
-  function completeUpload(uploadId: string, result: ImageData) {
+  function completeUpload(uploadId: string, result: MediaImage) {
     const upload = uploads.value.get(uploadId)
     if (upload) {
       upload.status = 'completed'
@@ -135,7 +135,7 @@ export const useUploadStore = defineStore('upload', () => {
           // This might need to be handled differently based on the API response
           const upload = uploads.value.get(uploadId)
           if (upload) {
-            completeUpload(uploadId, upload.result || {} as ImageData)
+            completeUpload(uploadId, upload.result || ({} as MediaImage))
           }
         } else if (status.status === 'failed') {
           failUpload(uploadId, status.error || 'Upload failed')

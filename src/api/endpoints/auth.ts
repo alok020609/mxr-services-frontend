@@ -1,7 +1,7 @@
 import apiClient from '../client'
 import type { User, Address, LoginRequest, RegisterRequest, ApiResponse } from '../types'
 import type { AxiosError } from 'axios'
-import { extractErrorMessage, formatApiError } from '@/utils/errorHandler'
+import { formatApiError } from '@/utils/errorHandler'
 
 // Authentication endpoints
 export const authApi = {

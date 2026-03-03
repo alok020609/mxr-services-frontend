@@ -1,5 +1,5 @@
 import apiClient from '../client'
-import type { ApiResponse, Product, PaginatedResponse } from '../types'
+import type { ApiResponse, Product } from '../types'
 
 export interface AdvancedSearchRequest {
   query?: string

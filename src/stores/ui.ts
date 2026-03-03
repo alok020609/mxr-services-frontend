@@ -3,7 +3,6 @@ import { ref } from 'vue'
 import type { AxiosError } from 'axios'
 import { 
   extractErrorMessage, 
-  getValidationErrors, 
   getAuthErrorMessage,
   isNetworkError,
   isServerError,

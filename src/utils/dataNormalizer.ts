@@ -62,9 +62,13 @@ export function normalizeOrder(order: any): Order {
     'pending'
 
   const rawStatus = order.status ?? order.state ?? order.currentState ?? 'pending'
-  const status = (typeof rawStatus === 'string' ? rawStatus : 'pending').toLowerCase()
+  const statusRaw = (typeof rawStatus === 'string' ? rawStatus : 'pending').toLowerCase()
+  const status: Order['status'] =
+    statusRaw === 'pending' || statusRaw === 'processing' || statusRaw === 'shipped' || statusRaw === 'delivered' || statusRaw === 'cancelled' || statusRaw === 'refunded'
+      ? statusRaw
+      : 'pending'
   const finalPaymentStatus =
-    (status === 'paid' || status === 'completed') && paymentStatus === 'pending'
+    (statusRaw === 'paid' || statusRaw === 'completed') && paymentStatus === 'pending'
       ? 'paid'
       : paymentStatus
 

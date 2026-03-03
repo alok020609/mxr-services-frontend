@@ -1,5 +1,4 @@
 import apiClient from '../client'
-import { handleApiCall } from '../helpers'
 import type { PaymentGateway, PaymentIntentCreateResult, ApiResponse } from '../types'
 
 export const paymentsApi = {

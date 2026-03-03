@@ -1,6 +1,5 @@
 import { defineStore } from 'pinia'
-import { ref, computed } from 'vue'
-import type { FeatureFlag } from './features'
+import { ref } from 'vue'
 import { env } from './env'
 import { isFeatureEnabled as checkFeatureEnabled } from './features'
 

@@ -1375,6 +1375,10 @@ export interface MediaUpload {
     size: number
     type: string
   }
+  error?: string
+  uploadedBytes?: number
+  totalBytes?: number
+  estimatedTimeRemaining?: number
 }
 
 export interface MediaImage {
@@ -1901,7 +1905,7 @@ export interface ActivityLog {
   createdAt: string
 }
 
-export interface Notification {
+export interface AdminNotificationPayload {
   id: string
   title?: string
   message: string
@@ -2097,174 +2101,6 @@ export interface SavedFilter {
   filters: any
   createdAt: string
   updatedAt?: string
-}
-
-// Export all types
-export type {
-  ApiResponse,
-  ApiError,
-  PaginatedResponse,
-  User,
-  Address,
-  Product,
-  Category,
-  Service,
-  ServiceType,
-  CartItem,
-  Cart,
-  Order,
-  OrderItem,
-  PaymentGateway,
-  PaymentIntent,
-  Review,
-  WishlistItem,
-  Coupon,
-  Notification,
-  AnalyticsDashboard,
-  LoginRequest,
-  RegisterRequest,
-  CreateProductRequest,
-  AddToCartRequest,
-  CreateOrderRequest,
-  ReturnOrderRequest,
-  ProductFilters,
-  OrderFilters,
-  OrderNote,
-  OrderTask,
-  Activity,
-  AdminNotification,
-  SavedFilter,
-  DigitalProduct,
-  Subscription,
-  CreateSubscriptionRequest,
-  PreOrder,
-  CreatePreOrderRequest,
-  GiftCard,
-  PurchaseGiftCardRequest,
-  RedeemGiftCardRequest,
-  VersioningStrategy,
-  DeprecationPolicy,
-  DeprecationNotice,
-  CreateDeprecationNoticeRequest,
-  VersionLifecycle,
-  CompatibilityGuarantees,
-  ApiTier,
-  ApiUsage,
-  ApiVersionInfo,
-  DeprecateVersionRequest,
-  BatchRequest,
-  BatchResponse,
-  BatchRequestPayload,
-  BatchResponseData,
-  // Compliance Types
-  LegalDocument,
-  DocumentAcceptance,
-  PCIComplianceStatus,
-  TaxCalculationRequest,
-  TaxCalculationResponse,
-  NexusLocation,
-  // Customer Experience Types
-  ProductQuestion,
-  SizeGuide,
-  ProductVideo,
-  SocialProof,
-  WaitlistItem,
-  ProductAlert,
-  // Customer Service Enhanced Types
-  OrderTracking,
-  KnowledgeBaseArticle,
-  TroubleshootingGuide,
-  VideoTutorial,
-  CallbackRequest,
-  // Disaster Recovery Types
-  RPORTO,
-  DisasterRecoveryPlan,
-  Backup,
-  BackupSchedule,
-  RestoreDrill,
-  // Feature Flags Types
-  FeatureFlag,
-  FeatureFlagRule,
-  FeatureFlagOverride,
-  FeatureFlagStats,
-  // Gifts Types
-  GiftRegistry,
-  GiftRegistryItem,
-  GiftOrder,
-  GiftTracking,
-  // Internationalization Types
-  RegionalPrice,
-  RegionalAvailability,
-  RegionalPaymentMethod,
-  RegionalShippingCarrier,
-  RegionalCompliance,
-  Store,
-  // Job Queue Types
-  JobStats,
-  Job,
-  // Language Types
-  Language,
-  Translation,
-  // Loyalty Types
-  LoyaltyPoints,
-  LoyaltyTier,
-  LoyaltyReward,
-  ReferralCode,
-  // Marketing Types
-  FlashSale,
-  Deal,
-  ProductBundle,
-  AbandonedCart,
-  // Media Types
-  MediaUpload,
-  MediaImage,
-  ImageVariant,
-  // Migration Types
-  Migration,
-  CompatibilityCheck,
-  // Mobile Types
-  AppVersion,
-  DeviceRegistration,
-  DeepLink,
-  MobilePayment,
-  PushNotification,
-  // Monitoring Types
-  SystemHealth,
-  SystemMetrics,
-  // Tenant Types
-  Tenant,
-  TenantStats,
-  // Notification Preferences
-  NotificationPreferences,
-  // Observability Types
-  SLADefinition,
-  SLODefinition,
-  SLOStatus,
-  AlertThreshold,
-  SLOReport,
-  // Integration Types
-  Integration,
-  // Order Enhancement Types
-  ScheduledDelivery,
-  OrderSplit,
-  // Export types from API endpoint files
-  // Note: Some types are defined in endpoint files and should be imported directly
-  // Product Management Types
-  // (Using interfaces from product-management.ts)
-  // Search Types
-  // (Using interfaces from search.ts)
-  // Security Types
-  // (Using interfaces from security.ts)
-  // Shipping Types
-  // (Using interfaces from shipping-carriers.ts and shipping.ts)
-  // Social Commerce Types
-  // (Using interfaces from social.ts)
-  // Support Types
-  // (Using interfaces from support.ts)
-  // Wallet Types
-  // (Using interfaces from wallet.ts)
-  // Vendor Types
-  // (Using interfaces from vendor.ts)
 }
 
 // Logistics Types

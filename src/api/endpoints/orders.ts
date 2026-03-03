@@ -1,6 +1,5 @@
 import apiClient from '../client'
 import type { Order, CreateOrderRequest, ReturnOrderRequest, ApiResponse, PaginatedResponse } from '../types'
-import { handleApiCall } from '../helpers'
 
 export const ordersApi = {
   // Create order - explicit payload so paymentMethod is never dropped (default 'cod')

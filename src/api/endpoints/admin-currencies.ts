@@ -40,7 +40,7 @@ export const adminCurrenciesApi = {
     })
     if (response.data.success && Array.isArray((response.data as { data?: unknown[] }).data)) {
       ;(response.data as ApiResponse<Currency[]>).data = ((response.data as ApiResponse<Currency[]>).data ?? []).map(
-        (item) => normalizeCurrency(item as Record<string, unknown>)
+        (item) => normalizeCurrency(item as unknown as Record<string, unknown>)
       )
     }
     return response.data as ApiResponse<Currency[]>
@@ -50,7 +50,7 @@ export const adminCurrenciesApi = {
     const response = await apiClient.get(`/admin/currencies/${code}`)
     if (response.data.success && (response.data as ApiResponse<Currency>).data) {
       ;(response.data as ApiResponse<Currency>).data = normalizeCurrency(
-        (response.data as ApiResponse<Currency>).data as Record<string, unknown>
+        ((response.data as ApiResponse<Currency>).data as unknown) as Record<string, unknown>
       )
     }
     return response.data as ApiResponse<Currency>
@@ -60,7 +60,7 @@ export const adminCurrenciesApi = {
     const response = await apiClient.post('/admin/currencies', body)
     if (response.data.success && (response.data as ApiResponse<Currency>).data) {
       ;(response.data as ApiResponse<Currency>).data = normalizeCurrency(
-        (response.data as ApiResponse<Currency>).data as Record<string, unknown>
+        ((response.data as ApiResponse<Currency>).data as unknown) as Record<string, unknown>
       )
     }
     return response.data as ApiResponse<Currency>
@@ -70,7 +70,7 @@ export const adminCurrenciesApi = {
     const response = await apiClient.put(`/admin/currencies/${code}`, body)
     if (response.data.success && (response.data as ApiResponse<Currency>).data) {
       ;(response.data as ApiResponse<Currency>).data = normalizeCurrency(
-        (response.data as ApiResponse<Currency>).data as Record<string, unknown>
+        ((response.data as ApiResponse<Currency>).data as unknown) as Record<string, unknown>
       )
     }
     return response.data as ApiResponse<Currency>

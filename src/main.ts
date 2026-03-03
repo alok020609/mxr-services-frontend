@@ -39,7 +39,7 @@ app.config.errorHandler = (err, instance, info) => {
     console.error('[Vue Recursive Update Debug]', {
       componentName: instance?.$?.type?.__name || instance?.$?.type?.name,
       props: instance?.$?.props,
-      setupState: instance?.$?.setupState,
+      setupState: (instance?.$ as { setupState?: unknown })?.setupState,
       errorMessage: err.message,
       stack: err.stack
     })

@@ -4,7 +4,6 @@ import { cartApi } from '@/api/endpoints/cart'
 import { useUIStore } from '@/stores/ui'
 import type { AddToCartRequest } from '@/api/types'
 import type { AxiosError } from 'axios'
-import { extractErrorMessage } from '@/utils/errorHandler'
 
 export const useCart = () => {
   const cartStore = useCartStore()

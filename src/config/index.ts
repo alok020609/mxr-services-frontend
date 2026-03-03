@@ -1,5 +1,5 @@
 // Centralized configuration exports
-export * from './env'
+export { env, validateEnv, getEnabledFeatures } from './env'
 export * from './endpoints'
 export * from './features'
 export * from './store'

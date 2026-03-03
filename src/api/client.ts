@@ -1,6 +1,6 @@
 import axios, { AxiosInstance, AxiosError, InternalAxiosRequestConfig, AxiosResponse } from 'axios'
 import { env } from '@/config/env'
-import { handleApiError, extractErrorMessage, isNetworkError, isAuthError } from '@/utils/errorHandler'
+import { handleApiError } from '@/utils/errorHandler'
 import { logApiRequest, logApiResponse, logApiError } from '@/utils/apiLogger'
 
 // Get API base URL from environment configuration
@@ -137,7 +137,7 @@ apiClient.interceptors.response.use(
     // This will log the error with full details and extract the error message
     // The error handler uses the API logger for consistent formatted output
     if (!isExpected404) {
-      const formattedError = handleApiError(error, originalRequest.url)
+      handleApiError(error, originalRequest.url)
     }
     
     // Return the error with the formatted message attached for components to use
