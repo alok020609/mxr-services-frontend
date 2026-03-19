@@ -114,10 +114,10 @@
       >
         <template #cell-image="{ row }">
           <img
-            :src="row.image || '/placeholder.jpg'"
+            :src="row.image || '/placeholder.png'"
             :alt="row.name"
             class="w-12 h-12 object-cover rounded"
-            @error="($event.target as HTMLImageElement).src = '/placeholder.jpg'"
+            @error="($event.target as HTMLImageElement).src = '/placeholder.png'"
           />
         </template>
         <template #cell-name="{ row }">

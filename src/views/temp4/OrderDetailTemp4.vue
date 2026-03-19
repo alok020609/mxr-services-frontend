@@ -76,16 +76,16 @@
             <div v-for="item in order.items" :key="item.id" class="flex items-center gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
               <img
                 v-if="item.product"
-                :src="item.product?.images?.[0] || '/placeholder.jpg'"
+                :src="item.product?.images?.[0] || '/placeholder.png'"
                 :alt="item.product?.name"
                 class="w-20 h-20 object-cover rounded-lg flex-shrink-0"
               />
               <img
                 v-else-if="item.service"
-                :src="item.service?.image || '/placeholder.jpg'"
+                :src="item.service?.image || '/placeholder.png'"
                 :alt="item.service?.name"
                 class="w-20 h-20 object-cover rounded-lg flex-shrink-0"
-                @error="($event.target as HTMLImageElement).src = '/placeholder.jpg'"
+                @error="($event.target as HTMLImageElement).src = '/placeholder.png'"
               />
               <div
                 v-else

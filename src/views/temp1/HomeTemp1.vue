@@ -232,7 +232,7 @@ const calculatorTabs = [
 ]
 
 // Use a variable so Vite does not try to resolve the path at build time (file may not exist yet)
-const placeholderImageUrl = '/placeholder.jpg'
+const placeholderImageUrl = '/placeholder.png'
 
 const equipmentProducts = ref([
   { id: '1', name: 'Camera Kit A', description: 'Professional security camera with night vision.', price: '$508', image: placeholderImageUrl, slug: '' },

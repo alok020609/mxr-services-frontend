@@ -34,7 +34,7 @@
           <router-link :to="`/products/${item.productId}`" class="block mb-4">
             <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden mb-3">
               <img
-                :src="item.product?.images?.[0] || '/placeholder.jpg'"
+                :src="item.product?.images?.[0] || '/placeholder.png'"
                 :alt="item.product?.name || 'Product'"
                 class="w-full h-full object-cover"
               />

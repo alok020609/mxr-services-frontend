@@ -178,7 +178,7 @@ const isExternalLink = (url: string): boolean => {
 
 const handleImageError = (event: Event) => {
   const img = event.target as HTMLImageElement
-  img.src = '/placeholder.jpg'
+  img.src = '/placeholder.png'
 }
 
 onMounted(() => {

@@ -36,7 +36,7 @@
             <router-link :to="`/products/${alert.productId}`" class="flex-shrink-0">
               <div class="w-24 h-24 bg-gray-100 rounded-lg overflow-hidden">
                 <img
-                  :src="alert.product?.images?.[0] || '/placeholder.jpg'"
+                  :src="alert.product?.images?.[0] || '/placeholder.png'"
                   :alt="alert.product?.name || 'Product'"
                   class="w-full h-full object-cover"
                 />

@@ -186,7 +186,7 @@ import Toast from '@/components/common/Toast.vue'
 
 const contactPhone = env.contactPhone
 const whatsappHref = env.whatsappNumber ? `https://wa.me/${env.whatsappNumber}` : ''
-const placeholderImageUrl = '/placeholder.jpg'
+const placeholderImageUrl = '/placeholder.png'
 
 const packageTab = ref('home')
 const packageTabs = [

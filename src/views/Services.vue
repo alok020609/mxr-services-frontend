@@ -62,10 +62,10 @@
         >
           <router-link :to="`/services/${svc.id}`" class="block flex-1 min-w-0">
             <img
-              :src="svc.image || '/placeholder.jpg'"
+              :src="svc.image || '/placeholder.png'"
               :alt="svc.name"
               class="w-full h-40 object-cover rounded-lg mb-4"
-              @error="($event.target as HTMLImageElement).src = '/placeholder.jpg'"
+              @error="($event.target as HTMLImageElement).src = '/placeholder.png'"
             />
             <h3 class="font-semibold text-lg mb-2 text-gray-900 hover:text-primary-600">{{ svc.name }}</h3>
             <p class="text-sm text-gray-600 mb-2">{{ svc.description || '—' }}</p>

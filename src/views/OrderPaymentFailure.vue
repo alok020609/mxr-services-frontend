@@ -1,8 +1,7 @@
 <template>
-  <div>
-    <Header @toggle-sidebar="sidebarOpen = true" />
-    <Sidebar :is-open="sidebarOpen" @close="sidebarOpen = false" />
-    <main class="container mx-auto px-4 py-8">
+  <div class="min-h-screen flex flex-col bg-sgBgLight dark:bg-sgBgDark">
+    <HeaderTemp4 />
+    <main class="container mx-auto px-4 py-8 flex-1">
       <h1 class="text-3xl font-bold mb-8">Payment Failed</h1>
       <div class="card p-6 max-w-xl mx-auto text-center">
         <p class="text-red-600 font-semibold text-lg mb-2">Your payment could not be completed.</p>
@@ -29,7 +28,7 @@
         </div>
       </div>
     </main>
-    <Footer />
+    <FooterTemp4 />
     <Toast />
   </div>
 </template>
@@ -37,13 +36,11 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
-import Header from '@/components/layout/Header.vue'
-import Footer from '@/components/layout/Footer.vue'
-import Sidebar from '@/components/layout/Sidebar.vue'
+import HeaderTemp4 from '@/components/layout/temp4/HeaderTemp4.vue'
+import FooterTemp4 from '@/components/layout/temp4/FooterTemp4.vue'
 import Toast from '@/components/common/Toast.vue'
 
 const route = useRoute()
-const sidebarOpen = ref(false)
 
 const orderId = computed(() => (route.query.orderId as string) ?? '')
 const message = computed(

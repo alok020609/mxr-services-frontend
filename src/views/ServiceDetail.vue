@@ -17,10 +17,10 @@
         <router-link to="/services" class="text-primary-600 hover:underline text-sm mb-4 inline-block">← Back to services</router-link>
         <div class="card p-8">
           <img
-            :src="service.image || '/placeholder.jpg'"
+            :src="service.image || '/placeholder.png'"
             :alt="service.name"
             class="w-full h-64 object-cover rounded-lg mb-6"
-            @error="($event.target as HTMLImageElement).src = '/placeholder.jpg'"
+            @error="($event.target as HTMLImageElement).src = '/placeholder.png'"
           />
           <h1 class="text-3xl font-bold mb-4">{{ service.name }}</h1>
           <p class="text-gray-600 mb-4">{{ service.description || '—' }}</p>

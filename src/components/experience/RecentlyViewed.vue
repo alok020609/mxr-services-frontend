@@ -30,7 +30,7 @@
         <div class="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden">
           <div class="aspect-square bg-gray-100 relative overflow-hidden">
             <img
-              :src="product.images?.[0] || '/placeholder.jpg'"
+              :src="product.images?.[0] || '/placeholder.png'"
               :alt="product.name"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform"
             />

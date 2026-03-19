@@ -38,20 +38,35 @@
               </div>
               <div class="mt-12 flex items-center gap-6 border-t border-slate-100 dark:border-slate-800 pt-8">
                 <div class="flex -space-x-3">
-                  <img alt="Client" class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLUbyJX6pPjdvo2Ey8d2hZc5Og6XC9u6I0ICWMwWARNl6gGOeQSe0X-rrC4QlK0LgOunEUorItP1NqERUMAKuM3S7t03k1G07jiC47RE-dpzQyAssBvaQ5Q9k7wlzF72Ip9j9sXNK2rgdjYlT7sbOBYM4AnVR6BmmMHs7HV1QlIMLesSTCs8ByifB7H2Dvw9bmM3Mj5G2ZmGtJEDFLfT-zZ-80nZ8Eg6ACXYHPyFD0OlsycafMri51xw8xN0nsoK3vvC6Z0BKPcnw" />
-                  <img alt="Client" class="w-10 h-10 rounded-full border-2 border-white object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxcui3C1_LiVF3nA0cFHKO6QfTnzWqA3TMsNvCdwOCId9mDnZL-cpL1wH9LGkcbDO-fDA0sGIO-Tqc0xo4G9MwmXVKI3ZJc0r7px9aJFu5OHl4Mvp7GUTAEGVbv3PS5WKE5FeSRGRg0-NneaQBtMaqpeXtkqbeNC-bX_XqNW3VeJvD0xaW2haLNzP3uR-uh1LH-dPDt-KkeubW6ZwyKx1UMI-TDRt62ZYjqMFHvtp_0QIGKHg5KV5qgcCEVWCMoIUU77WipwnonaU" />
-                  <div class="w-10 h-10 rounded-full border-2 border-white bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px] font-bold text-slate-600 dark:text-slate-400">+5k</div>
+                  <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-white bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-500">
+                    <img
+                      class="w-full h-full object-cover rounded-full block"
+                      src="/unknow_person_1.png"
+                      alt="Hero"
+                      @error="(e) => (e.currentTarget as HTMLImageElement).src = '/placeholder.png'"
+                    />
+                  </div>
+                  <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-white bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-500">
+                    <img
+                      class="w-full h-full object-cover rounded-full block"
+                      src="/unknow_person_2.png"
+                      alt="Hero"
+                      @error="(e) => (e.currentTarget as HTMLImageElement).src = '/placeholder.png'"
+                    />
+                  </div>
+                  <div class="w-10 h-10 rounded-full border-2 border-white bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px] font-bold text-slate-600 dark:text-slate-400">+</div>
                 </div>
-                <p class="text-sm text-slate-500 font-medium">Trusted by over 5,000+ local homeowners and businesses</p>
+                <p class="text-sm text-slate-500 font-medium">Trusted by homeowners and businesses</p>
               </div>
             </div>
             <div class="relative">
               <div class="absolute -inset-4 bg-sgPrimary/10 rounded-[2.5rem] blur-3xl"></div>
-              <div class="relative bg-slate-200 dark:bg-slate-800 rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3]">
+              <div class="relative bg-slate-200 dark:bg-slate-800 rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3] flex items-center justify-center">
                 <img
                   class="w-full h-full object-cover"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9gZ5SFmKNzTUscuAFEICKIOscUm94VUD5vZ2oigg2LAr48emnOY1THvdibrpG0PucXZ6bIjlD4Po-CQ_dM9DxJGuMQBUqwdmQ2S3uK2NFqSRyGY1_DgOMrm7E6ZvEnYqI84pWBdL4iLDFzOMY85DpsQPorufv12CPnAEoAY6ebn1nn7DEg-tYOyNEHHQIw1p1DBseg6UK_lY43WdLF16ElwIKesCtSWt8ZSqu_vfCvx9m2TOdnIEe6yE7XVXV9l8n2XGo7fbhpR0"
-                  alt="Modern building with security camera"
+                  src="/camera_main.png"
+                  alt="Hero"
+                  @error="(e) => (e.currentTarget as HTMLImageElement).src = '/placeholder.png'"
                 />
                 <div class="absolute bottom-6 left-6 right-6 bg-white/90 dark:bg-sgNavy/90 backdrop-blur p-4 rounded-2xl border border-white/20 flex items-center gap-4">
                   <div class="bg-green-500 h-3 w-3 rounded-full animate-pulse"></div>
@@ -127,7 +142,7 @@
               <div class="grid grid-cols-2 gap-4">
                 <div class="space-y-4">
                   <div class="h-64 rounded-3xl overflow-hidden bg-slate-200 dark:bg-slate-800">
-                    <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBZW4vh3tVxEbyhCMXB-mYpFueh6nD5RdYftjfL1P9_ZwtMH2Ma1EESMfPzkhuQB7_W-2evhpZRm6G9ZVrzDI8ibrdKol0hL8Fvc86zoAQZnhGhE2fVMSXrocMl6_DxXP45aQ0JrKYWFekrevQ5zr6A56KRF3r3_DQWNXveUkThMCMPLIYNoJ2V9HqYpcGJaFpGbtEq4KP5PHccmgTZTV_7Vld0Dg2e2XuGyxdKP8rOwUUxI1o3rpxA9uroxUEUMHBkyrIpxTkdm4" alt="Technician installing camera" />
+                    <img class="w-full h-full object-cover" src="/camera_installation_1.png" alt="Service" />
                   </div>
                   <div class="bg-sgNavy p-6 rounded-3xl text-white">
                     <p class="text-3xl font-black mb-1">15+</p>
@@ -140,7 +155,7 @@
                     <p class="text-xs uppercase tracking-widest opacity-80">Active Monitoring</p>
                   </div>
                   <div class="h-64 rounded-3xl overflow-hidden bg-slate-200 dark:bg-slate-800">
-                    <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJIf74YBCywSHWJ1neCZUOp4kLBTGo4QuISbGLnx8gfYcU57YAynOTMqn6dYine5KboYJSwLNc7o2YfBU0Sq6aliRgjws7OcB2iSnMi9d_qHJerzRPvb7zeCTA0Pq-xSB8OEAYsckbY3Ow7J_gJqgUO6jBeCgxcB3IgkFZE5JhmifzkttAt_PNcfFeJ6yJxrRmV4H8v0LN0q5utabophqzp9_xM1WebXthcyRJNPJfEIUJrQyQgpjARqiFa1aeXMnmzaaCnovJ1OU" alt="Smart lock on door" />
+                    <img class="w-full h-full object-cover" src="/door_lock_1.png" alt="Product" />
                   </div>
                 </div>
               </div>
@@ -155,8 +170,8 @@
                     <span class="material-symbols-outlined">engineering</span>
                   </div>
                   <div>
-                    <h5 class="text-lg font-bold text-sgNavy dark:text-white mb-2">Expert Certified Installation</h5>
-                    <p class="text-slate-600 dark:text-slate-400">Our team consists of licensed engineers who ensure every camera and sensor is positioned for maximum coverage with zero blind spots.</p>
+                    <h5 class="text-lg font-bold text-sgNavy dark:text-white mb-2">Professional installation</h5>
+                    <p class="text-slate-600 dark:text-slate-400">Experienced technicians install and test everything carefully, and walk you through the setup before we leave.</p>
                   </div>
                 </div>
                 <div class="flex gap-6">
@@ -164,8 +179,8 @@
                     <span class="material-symbols-outlined">security_update_good</span>
                   </div>
                   <div>
-                    <h5 class="text-lg font-bold text-sgNavy dark:text-white mb-2">Advanced AI Technology</h5>
-                    <p class="text-slate-600 dark:text-slate-400">We use AI-driven motion detection that can distinguish between a human intruder and a neighborhood pet, reducing false alarms by 99%.</p>
+                    <h5 class="text-lg font-bold text-sgNavy dark:text-white mb-2">Smart motion alerts</h5>
+                    <p class="text-slate-600 dark:text-slate-400">Get helpful notifications and adjustable sensitivity settings, so alerts match your space and schedule.</p>
                   </div>
                 </div>
                 <div class="flex gap-6">
@@ -173,8 +188,8 @@
                     <span class="material-symbols-outlined">support_agent</span>
                   </div>
                   <div>
-                    <h5 class="text-lg font-bold text-sgNavy dark:text-white mb-2">24/7 Professional Monitoring</h5>
-                    <p class="text-slate-600 dark:text-slate-400">Rest easy knowing our rapid-response monitoring center is watching over your property even when you're thousands of miles away.</p>
+                    <h5 class="text-lg font-bold text-sgNavy dark:text-white mb-2">Ongoing support</h5>
+                    <p class="text-slate-600 dark:text-slate-400">Need help later? We’re here for troubleshooting, upgrades, and advice as your needs change.</p>
                   </div>
                 </div>
               </div>
@@ -189,6 +204,40 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured products -->
+      <section v-if="featuredProducts.length > 0" class="py-24 bg-slate-50 dark:bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-end justify-between gap-4 mb-10">
+            <div>
+              <h2 class="text-sgPrimary font-bold tracking-widest uppercase text-sm mb-2">Shop</h2>
+              <h3 class="text-3xl font-black text-sgNavy dark:text-white">Featured Products</h3>
+            </div>
+            <router-link to="/products" class="text-sgPrimary font-bold hover:underline flex items-center gap-1">View all <span class="material-symbols-outlined">arrow_forward</span></router-link>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <router-link
+              v-for="p in featuredProducts"
+              :key="p.id"
+              :to="`/products/${p.id}`"
+              class="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-sgBgDark overflow-hidden hover:shadow-xl transition-all"
+            >
+              <div class="aspect-[4/3] bg-slate-100 dark:bg-slate-800 overflow-hidden">
+                <img
+                  :src="featuredImage(p)"
+                  :alt="p.name"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                  @error="(e) => (e.currentTarget as HTMLImageElement).src = '/placeholder.png'"
+                />
+              </div>
+              <div class="p-4">
+                <h4 class="font-bold text-slate-900 dark:text-white line-clamp-2">{{ p.name }}</h4>
+                <p class="mt-1 text-lg font-black text-sgPrimary">{{ formatPrice(p.price) }}</p>
+              </div>
+            </router-link>
           </div>
         </div>
       </section>
@@ -217,8 +266,34 @@
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted } from 'vue'
 import HeaderTemp4 from '@/components/layout/temp4/HeaderTemp4.vue'
 import FooterTemp4 from '@/components/layout/temp4/FooterTemp4.vue'
+import { productsApi } from '@/api/endpoints/products'
+import type { Product } from '@/api/types'
+
+const featuredProducts = ref<Product[]>([])
+
+function featuredImage(p: Product): string {
+  const img = p.images?.[0]
+  if (img) return img.startsWith('http') ? img : (import.meta.env.VITE_API_BASE_URL?.replace('/api/v1', '') || '') + img
+  return '/placeholder.png'
+}
+
+function formatPrice(value: number): string {
+  return new Intl.NumberFormat(undefined, { style: 'currency', currency: 'USD', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(value)
+}
+
+onMounted(async () => {
+  try {
+    const res = await productsApi.getProducts({ limit: 4, page: 1 })
+    if (res.success && res.data && typeof res.data === 'object' && 'data' in res.data) {
+      featuredProducts.value = (res.data as { data: Product[] }).data ?? []
+    }
+  } catch {
+    featuredProducts.value = []
+  }
+})
 </script>
 
 <style scoped>

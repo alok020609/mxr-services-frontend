@@ -1,8 +1,7 @@
 <template>
-  <div>
-    <Header @toggle-sidebar="sidebarOpen = true" />
-    <Sidebar :is-open="sidebarOpen" @close="sidebarOpen = false" />
-    <main class="container mx-auto px-4 py-8">
+  <div class="min-h-screen flex flex-col bg-sgBgLight dark:bg-sgBgDark">
+    <HeaderTemp4 />
+    <main class="container mx-auto px-4 py-8 flex-1">
       <h1 class="text-3xl font-bold mb-8">Payment Successful</h1>
       <div v-if="loadError" class="card p-6 text-center">
         <p class="text-red-600 mb-4">{{ loadError }}</p>
@@ -44,7 +43,7 @@
         <p class="text-gray-600 mt-3">Loading order...</p>
       </div>
     </main>
-    <Footer />
+    <FooterTemp4 />
     <Toast />
   </div>
 </template>
@@ -55,9 +54,8 @@ import { useRoute } from 'vue-router'
 import { ordersApi } from '@/api/endpoints/orders'
 import { extractErrorMessage } from '@/utils/errorHandler'
 import { useUIStore } from '@/stores/ui'
-import Header from '@/components/layout/Header.vue'
-import Footer from '@/components/layout/Footer.vue'
-import Sidebar from '@/components/layout/Sidebar.vue'
+import HeaderTemp4 from '@/components/layout/temp4/HeaderTemp4.vue'
+import FooterTemp4 from '@/components/layout/temp4/FooterTemp4.vue'
 import Toast from '@/components/common/Toast.vue'
 import LoadingSpinner from '@/components/common/LoadingSpinner.vue'
 import type { Order } from '@/api/types'
@@ -66,7 +64,6 @@ import { usePriceFormatter } from '@/composables/usePriceFormatter'
 const { formatPrice } = usePriceFormatter()
 const route = useRoute()
 const uiStore = useUIStore()
-const sidebarOpen = ref(false)
 const order = ref<Order | null>(null)
 const loadError = ref<string | null>(null)
 

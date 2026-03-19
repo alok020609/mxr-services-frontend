@@ -107,10 +107,10 @@
               class="flex flex-wrap items-center justify-between gap-3 p-3 border rounded-lg"
             >
               <img
-                :src="svc.image || '/placeholder.jpg'"
+                :src="svc.image || '/placeholder.png'"
                 :alt="svc.name"
                 class="w-16 h-16 object-cover rounded flex-shrink-0"
-                @error="($event.target as HTMLImageElement).src = '/placeholder.jpg'"
+                @error="($event.target as HTMLImageElement).src = '/placeholder.png'"
               />
               <div class="flex-1 min-w-0">
                 <h3 class="font-semibold">{{ svc.name }}</h3>
@@ -150,10 +150,10 @@
               class="flex flex-wrap items-center justify-between gap-3 p-3 border rounded-lg"
             >
               <img
-                :src="svc.image || '/placeholder.jpg'"
+                :src="svc.image || '/placeholder.png'"
                 :alt="svc.name"
                 class="w-16 h-16 object-cover rounded flex-shrink-0"
-                @error="($event.target as HTMLImageElement).src = '/placeholder.jpg'"
+                @error="($event.target as HTMLImageElement).src = '/placeholder.png'"
               />
               <div class="flex-1 min-w-0">
                 <h3 class="font-semibold">{{ svc.name }}</h3>
@@ -290,7 +290,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div v-for="rec in recommendations" :key="rec.product.id" class="card hover:shadow-lg transition-shadow">
               <router-link :to="`/products/${rec.product.id}`">
-                <img :src="rec.product.images[0] || '/placeholder.jpg'" :alt="rec.product.name" class="w-full h-48 object-cover rounded-lg mb-4" />
+                <img :src="rec.product.images[0] || '/placeholder.png'" :alt="rec.product.name" class="w-full h-48 object-cover rounded-lg mb-4" />
                 <h3 class="font-semibold text-lg mb-2">{{ rec.product.name }}</h3>
                 <p class="text-primary-600 font-bold mb-2">{{ formatPrice(rec.product.price) }}</p>
                 <p v-if="rec.reason" class="text-sm text-gray-500">{{ rec.reason }}</p>

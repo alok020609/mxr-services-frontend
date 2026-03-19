@@ -4,7 +4,7 @@
     <div class="relative mb-4">
       <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden">
         <img
-          :src="currentImage || '/placeholder.jpg'"
+          :src="currentImage || '/placeholder.png'"
           :alt="productName"
           class="w-full h-full object-cover cursor-pointer transition-opacity"
           @click="openLightbox"
@@ -56,7 +56,7 @@
         aria-label="View image {{ index + 1 }}"
       >
         <img
-          :src="image || '/placeholder.jpg'"
+          :src="image || '/placeholder.png'"
           :alt="`${productName} - Image ${index + 1}`"
           class="w-full h-full object-cover"
           @error="handleThumbnailError(index)"
@@ -107,7 +107,7 @@
       </div>
       
       <img
-        :src="currentImage || '/placeholder.jpg'"
+        :src="currentImage || '/placeholder.png'"
         :alt="productName"
         class="max-w-full max-h-[90vh] object-contain"
         @click.stop
@@ -139,8 +139,8 @@ const currentIndex = ref(0)
 const showLightbox = ref(false)
 
 const currentImage = computed(() => {
-  if (props.images.length === 0) return '/placeholder.jpg'
-  return props.images[currentIndex.value] || props.images[0] || '/placeholder.jpg'
+  if (props.images.length === 0) return '/placeholder.png'
+  return props.images[currentIndex.value] || props.images[0] || '/placeholder.png'
 })
 
 const selectImage = (index: number) => {
@@ -177,7 +177,7 @@ const closeLightbox = () => {
 
 const handleImageError = (event: Event) => {
   const img = event.target as HTMLImageElement
-  img.src = '/placeholder.jpg'
+  img.src = '/placeholder.png'
 }
 
 const handleThumbnailError = (index: number) => {

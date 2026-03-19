@@ -16,28 +16,23 @@
         <div>
           <h4 class="font-bold text-white mb-4">Products</h4>
           <ul class="flex flex-col gap-2 text-sm text-slate-400">
-            <li><router-link to="/products" class="hover:text-sgPrimary transition-colors">Surveillance</router-link></li>
-            <li><a href="#" class="hover:text-sgPrimary transition-colors">Access Control</a></li>
-            <li><a href="#" class="hover:text-sgPrimary transition-colors">Alarm Systems</a></li>
-            <li><a href="#" class="hover:text-sgPrimary transition-colors">Smart Locks</a></li>
+            <li><router-link to="/products" class="hover:text-sgPrimary transition-colors">Products</router-link></li>
+            <li><router-link to="/packages" class="hover:text-sgPrimary transition-colors">Packages</router-link></li>
           </ul>
         </div>
         <div>
           <h4 class="font-bold text-white mb-4">Company</h4>
           <ul class="flex flex-col gap-2 text-sm text-slate-400">
-            <li><a href="#" class="hover:text-sgPrimary transition-colors">About Us</a></li>
-            <li><a href="#" class="hover:text-sgPrimary transition-colors">Careers</a></li>
-            <li><a href="#" class="hover:text-sgPrimary transition-colors">Legal</a></li>
-            <li><a href="#" class="hover:text-sgPrimary transition-colors">Privacy</a></li>
+            <li><router-link to="/" class="hover:text-sgPrimary transition-colors">Home</router-link></li>
+            <li><router-link to="/contact" class="hover:text-sgPrimary transition-colors">Contact</router-link></li>
+            <li><router-link to="/privacy" class="hover:text-sgPrimary transition-colors">Privacy</router-link></li>
           </ul>
         </div>
         <div>
           <h4 class="font-bold text-white mb-4">Support</h4>
           <ul class="flex flex-col gap-2 text-sm text-slate-400">
-            <li><a href="#" class="hover:text-sgPrimary transition-colors">Help Center</a></li>
-            <li><a href="#" class="hover:text-sgPrimary transition-colors">Installation Guide</a></li>
-            <li><a href="#" class="hover:text-sgPrimary transition-colors">Contact Sales</a></li>
-            <li><a href="#" class="hover:text-sgPrimary transition-colors">Warranty</a></li>
+            <li><router-link to="/support" class="hover:text-sgPrimary transition-colors">Support</router-link></li>
+            <li><router-link to="/contact" class="hover:text-sgPrimary transition-colors">Contact</router-link></li>
           </ul>
         </div>
       </div>

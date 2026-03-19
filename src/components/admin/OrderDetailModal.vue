@@ -6,24 +6,24 @@
         <div v-for="item in order.items" :key="item.id" class="flex justify-between items-center py-2 border-b gap-3">
           <img
             v-if="item.product"
-            :src="item.product?.images?.[0] || '/placeholder.jpg'"
+            :src="item.product?.images?.[0] || '/placeholder.png'"
             :alt="item.product?.name"
             class="w-10 h-10 object-cover rounded flex-shrink-0"
-            @error="($event.target as HTMLImageElement).src = '/placeholder.jpg'"
+            @error="($event.target as HTMLImageElement).src = '/placeholder.png'"
           />
           <img
             v-else-if="item.service"
-            :src="item.service?.image || '/placeholder.jpg'"
+            :src="item.service?.image || '/placeholder.png'"
             :alt="item.service?.name"
             class="w-10 h-10 object-cover rounded flex-shrink-0"
-            @error="($event.target as HTMLImageElement).src = '/placeholder.jpg'"
+            @error="($event.target as HTMLImageElement).src = '/placeholder.png'"
           />
           <img
             v-else
             src="/placeholder.jpg"
             alt="Item"
             class="w-10 h-10 object-cover rounded flex-shrink-0"
-            @error="($event.target as HTMLImageElement).src = '/placeholder.jpg'"
+            @error="($event.target as HTMLImageElement).src = '/placeholder.png'"
           />
           <span class="flex-1 min-w-0">{{ item.product?.name ?? item.service?.name ?? 'Item' }} x{{ item.quantity }}</span>
           <span class="flex-shrink-0">{{ formatPrice(item.subtotal) }}</span>

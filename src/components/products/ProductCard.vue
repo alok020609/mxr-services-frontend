@@ -2,7 +2,7 @@
   <div class="card hover:shadow-lg transition-shadow">
     <router-link :to="`/products/${product.id}`">
       <img
-        :src="product.images[0] || '/placeholder.jpg'"
+        :src="product.images[0] || '/placeholder.png'"
         :alt="product.name"
         class="w-full h-48 object-cover rounded-lg mb-4"
       />

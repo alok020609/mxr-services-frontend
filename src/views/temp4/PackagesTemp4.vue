@@ -11,6 +11,9 @@
           <p class="text-slate-500 dark:text-slate-400 text-lg font-normal leading-normal max-w-2xl">
             Protect what matters most with our professional security solutions. Flexible plans designed for every scale of operation.
           </p>
+          <p class="text-slate-500 dark:text-slate-400 text-sm font-medium italic">
+            Note: Final pricing may vary based on site inspection, cabling, and specific requirements.
+          </p>
         </div>
 
         <!-- Segmented Control -->
@@ -55,7 +58,7 @@
                 <h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight">{{ plan.name }}</h2>
               </div>
               <p class="flex items-baseline gap-1 text-slate-900 dark:text-white mt-4">
-                <span class="text-4xl font-black tracking-tight">${{ plan.price }}</span>
+                <span class="text-2xl font-black tracking-tight">Rs. {{ plan.price }}</span>
                 <span class="text-slate-500 dark:text-slate-400 text-sm font-medium">one-time</span>
               </p>
             </div>
@@ -113,11 +116,21 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import HeaderTemp4 from '@/components/layout/temp4/HeaderTemp4.vue'
 import FooterTemp4 from '@/components/layout/temp4/FooterTemp4.vue'
 
-const selectedSegment = ref<'Home' | 'Office' | 'Industrial'>('Home')
+type Segment = 'Home' | 'Office' | 'Industrial'
+
+interface Plan {
+  category: string
+  name: string
+  price: string
+  isPopular: boolean
+  features: string[]
+}
+
+const selectedSegment = ref<Segment>('Home')
 
 const segmentOptions = [
   { value: 'Home' as const, label: 'Home' },
@@ -125,36 +138,108 @@ const segmentOptions = [
   { value: 'Industrial' as const, label: 'Industrial' },
 ]
 
-const plans = [
+const plansHome: Plan[] = [
   {
     category: 'Small Homes',
     name: 'Starter Setup',
-    price: '499',
+    price: '12,999',
     isPopular: false,
-    features: ['2x 4K UHD Cameras', '1TB DVR Storage', 'Mobile App Access', 'Pro Installation'],
+    features: ['2x 2.4 MP HD Cameras', '500 GB Hard Disk Storage', '1 Four-Channel DVR', 'Mobile App Remote Viewing (Android/iOS)', 'Professional Installation Included', '1 Year Service Support'],
   },
   {
     category: 'Medium Homes',
     name: 'Standard Kit',
-    price: '899',
+    price: '16,999',
     isPopular: true,
-    features: ['4x 4K UHD Cameras', '2TB NVR Storage', 'Smart AI Detection', 'Pro Installation'],
+    features: ['4x 2.4 MP HD Cameras with Mic', '1 TB Hard Disk Storage', '1 Four-Channel DVR', 'Mobile App Remote Viewing (Android/iOS)', 'Professional Installation Included', '1 Year Service Support'],
   },
   {
     category: 'Large Property',
     name: 'Advanced Plus',
-    price: '1,299',
+    price: '24,999',
     isPopular: false,
-    features: ['6x 4K UHD Cameras', '4TB NVR Storage', 'Night Vision Pro', 'Pro Installation'],
+    features: ['6x 5 MP HD Cameras with Mic', '1 TB Hard Disk Storage', '1 Eight-Channel DVR', 'Mobile App Remote Viewing (Android/iOS)', 'Professional Installation Included', '1 Year Service Support'],
   },
   {
     category: 'Estate/Commercial',
     name: 'Elite Guard',
-    price: '1,699',
+    price: '42,999',
     isPopular: false,
-    features: ['8x 4K UHD Cameras', '8TB NVR Storage', 'Cloud Backup (1 Yr)', 'Priority Support'],
+    features: ['8x IP Cameras', '1 TB Hard Disk Storage', '1 Eight-Channel NVR', 'Mobile App Remote Viewing (Android/iOS)', 'Professional Installation Included', '1 Year Service Support'],
   },
 ]
+
+// Office: same structure as Home for now, with Office-oriented category labels
+const plansOffice: Plan[] = [
+  {
+    category: 'Small Office',
+    name: 'Starter Setup',
+    price: '12,999',
+    isPopular: false,
+    features: ['2x 2.4 MP HD Cameras with Mics', '500 GB Hard Disk Storage', '1 Four-Channel DVR', 'Mobile App Remote Viewing (Android/iOS)', 'Professional Installation Included', '1 Year Service Support'],
+  },
+  {
+    category: 'Medium Office',
+    name: 'Standard Kit',
+    price: '18,999',
+    isPopular: true,
+    features: ['4x 5 MP HD Cameras with Mic', '1 TB Hard Disk Storage', '1 Four-Channel DVR', 'Mobile App Remote Viewing (Android/iOS)', 'Professional Installation Included', '1 Year Service Support'],
+  },
+  {
+    category: 'Large Office',
+    name: 'Advanced Plus',
+    price: '36,599',
+    isPopular: false,
+    features: ['6x IP Cameras', '1 TB Hard Disk Storage', '1 Eight-Channel NVR', 'Mobile App Remote Viewing (Android/iOS)', 'Professional Installation Included', '1 Year Service Support'],
+  },
+  {
+    category: 'Enterprise',
+    name: 'Elite Guard',
+    price: '42,999',
+    isPopular: false,
+    features: ['8x IP Cameras', '1 TB Hard Disk Storage', '1 Eight-Channel NVR', 'Mobile App Remote Viewing (Android/iOS)', 'Professional Installation Included', '1 Year Service Support'],
+  }
+]
+
+// Industrial: same structure as Home for now, with Industrial-oriented category labels
+const plansIndustrial: Plan[] = [
+  {
+    category: 'Small Site',
+    name: 'Starter Setup',
+    price: '15,999',
+    isPopular: false,
+    features: ['4x 2.4 MP HD Cameras with Mics', '500 GB Hard Disk Storage', '1 Four-Channel DVR', 'Mobile App Remote Viewing (Android/iOS)', 'Professional Installation Included', '1 Year Service Support'],
+  },
+  {
+    category: 'Medium Site',
+    name: 'Standard Kit',
+    price: '29,999',
+    isPopular: true,
+    features: ['8x 5 MP HD Cameras with Mic', '1 TB Hard Disk Storage', '1 Eight-Channel DVR', 'Mobile App Remote Viewing (Android/iOS)', 'Professional Installation Included', '1 Year Service Support'],
+  },
+  {
+    category: 'Large Site',
+    name: 'Advanced Plus',
+    price: '60,599',
+    isPopular: false,
+    features: ['12x IP Cameras', '1 TB Hard Disk Storage', '2 Eight-Channel NVR', 'Mobile App Remote Viewing (Android/iOS)', 'Professional Installation Included', '1 Year Service Support'],
+  },
+  {
+    category: 'Industrial/Heavy',
+    name: 'Elite Guard',
+    price: '70,999',
+    isPopular: false,
+    features: ['16x IP Cameras', '1 TB Hard Disk Storage', '2 Eight-Channel NVR', 'Mobile App Remote Viewing (Android/iOS)', 'Professional Installation Included', '1 Year Service Support'],
+  },
+]
+
+const plansBySegment: Record<Segment, Plan[]> = {
+  Home: plansHome,
+  Office: plansOffice,
+  Industrial: plansIndustrial,
+}
+
+const plans = computed(() => plansBySegment[selectedSegment.value])
 </script>
 
 <style scoped>

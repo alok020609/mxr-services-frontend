@@ -130,24 +130,24 @@
             >
               <img
                 v-if="item.product"
-                :src="item.product?.images?.[0] || '/placeholder.jpg'"
+                :src="item.product?.images?.[0] || '/placeholder.png'"
                 :alt="item.product?.name"
                 class="w-12 h-12 object-cover rounded flex-shrink-0"
-                @error="($event.target as HTMLImageElement).src = '/placeholder.jpg'"
+                @error="($event.target as HTMLImageElement).src = '/placeholder.png'"
               />
               <img
                 v-else-if="item.service"
-                :src="item.service?.image || '/placeholder.jpg'"
+                :src="item.service?.image || '/placeholder.png'"
                 :alt="item.service?.name"
                 class="w-12 h-12 object-cover rounded flex-shrink-0"
-                @error="($event.target as HTMLImageElement).src = '/placeholder.jpg'"
+                @error="($event.target as HTMLImageElement).src = '/placeholder.png'"
               />
               <img
                 v-else
                 src="/placeholder.jpg"
                 alt="Item"
                 class="w-12 h-12 object-cover rounded flex-shrink-0"
-                @error="($event.target as HTMLImageElement).src = '/placeholder.jpg'"
+                @error="($event.target as HTMLImageElement).src = '/placeholder.png'"
               />
               <div class="flex-1 min-w-0">
                 <p class="font-semibold">{{ item.product?.name || item.service?.name || item.name || item.productName || 'Item' }}</p>

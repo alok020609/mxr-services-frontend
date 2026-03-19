@@ -114,7 +114,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/products/:id',
     name: 'ProductDetail',
-    component: () => import('@/views/ProductDetail.vue'),
+    component: () => import('@/views/temp4/ProductDetailTemp4.vue'),
     meta: { requiresAuth: false }
   },
   {

@@ -1358,6 +1358,90 @@ Admin-only CRUD for catalog services (CONSULTING, REPAIR, INSTALLATION). Auth: s
 
 ---
 
+### emailServicesApi
+
+**File**: `src/api/endpoints/email-services.ts`
+
+Admin-only CRUD for email service providers (e.g. SMTP, SendGrid). Backend: section 25 in backend_apis.md (`GET/POST/PUT/PATCH/DELETE /api/v1/admin/email-services`).
+
+#### Methods
+
+##### `getEmailServices(filters?: { isActive?: boolean; type?: string; page?: number; limit?: number })`
+- **Parameters**: `filters` - Optional: `isActive`, `type`, `page`, `limit`
+- **Returns**: `Promise<ApiResponse<PaginatedResponse<EmailService> | EmailService[]>>`
+- **Description**: List email services. Backend: `GET /admin/email-services`
+
+##### `getEmailService(id: string)`
+- **Parameters**: `id: string` - Email service ID
+- **Returns**: `Promise<ApiResponse<EmailService>>`
+- **Description**: Get one email service. Backend: `GET /admin/email-services/:id`
+
+##### `createEmailService(data: EmailServiceCreatePayload)`
+- **Parameters**: `data` - Email service configuration
+- **Returns**: `Promise<ApiResponse<EmailService>>`
+- **Description**: Create email service. Backend: `POST /admin/email-services`
+
+##### `updateEmailService(id: string, data: Partial<EmailServiceCreatePayload>)`
+- **Parameters**: `id: string`, `data` - Fields to update
+- **Returns**: `Promise<ApiResponse<EmailService>>`
+- **Description**: Update email service. Backend: `PUT /admin/email-services/:id`
+
+##### `toggleEmailService(id: string, isActive: boolean)`
+- **Parameters**: `id: string`, `isActive: boolean` - Active state
+- **Returns**: `Promise<ApiResponse<EmailService>>`
+- **Description**: Enable or disable service. Backend: `PATCH /admin/email-services/:id/toggle`
+
+##### `setDefaultEmailService(id: string)`
+- **Parameters**: `id: string` - Email service ID
+- **Returns**: `Promise<ApiResponse<EmailService>>`
+- **Description**: Set as default email service. Backend: `PATCH /admin/email-services/:id/set-default`
+
+##### `deleteEmailService(id: string)`
+- **Parameters**: `id: string` - Email service ID
+- **Returns**: `Promise<ApiResponse>`
+- **Description**: Delete email service. Backend: `DELETE /admin/email-services/:id`
+
+---
+
+### adminMailSettingsApi
+
+**File**: `src/api/endpoints/admin-mail-settings.ts`
+
+Get/update global mail settings (triggers, notification email). Backend: GET/PUT /api/v1/admin/mail-settings (backend_apis.md 25.1).
+
+#### Methods
+
+##### `getMailSettings()`
+- **Returns**: `Promise<MailSettingsResponse>`
+- **Description**: Get mail settings (config, triggers, details, contactNotificationEmail). Backend: `GET /admin/mail-settings`
+
+##### `updateMailSettings(body: MailSettingsUpdateBody)`
+- **Parameters**: `body` - Optional: `triggers`, `details`, `contactNotificationEmail`
+- **Returns**: `Promise<MailSettingsResponse>`
+- **Description**: Update mail settings. Backend: `PUT /admin/mail-settings`
+
+---
+
+### adminContactApi
+
+**File**: `src/api/endpoints/admin-contact.ts`
+
+List and update contact form submissions (quote requests, site visits). Backend: GET /admin/contact-submissions, PATCH /admin/contact-submissions/:id (backend_apis.md 25.2 area).
+
+#### Methods
+
+##### `getContactSubmissions(params?: { page?: number; limit?: number; status?: ContactSubmissionStatus; hasUser?: boolean })`
+- **Parameters**: `params` - Optional: `page`, `limit`, `status`, `hasUser`
+- **Returns**: `Promise<ContactSubmissionsApiResponse>` (paginated `ContactSubmission[]`)
+- **Description**: List contact submissions. Backend: `GET /admin/contact-submissions`. Status: NEW, WAITING_FOR_CONFIRMATION, DONE
+
+##### `updateContactSubmission(id: string, body: ContactSubmissionUpdatePayload)`
+- **Parameters**: `id: string`, `body` - Optional: `status`, `visitAddress`, `proposedQuoteAmount`, `proposedQuoteDescription`, `visitScheduledAt`, `quoteSentAt`, `adminNotes`
+- **Returns**: `Promise<ApiResponse<ContactSubmission>>`
+- **Description**: Update a submission. Backend: `PATCH /admin/contact-submissions/:id`
+
+---
+
 ### analyticsApi
 
 **File**: `src/api/endpoints/analytics.ts`
@@ -2653,7 +2737,7 @@ This API reference documents all available API functions in the Ecommerce Fronte
 - **Wallet**: Balance, funds, credits, invoices
 - **Vendor**: Vendor dashboard and products
 - **Webhooks**: Webhook event monitoring
-- **Admin APIs**: User management, order management, analytics
+- **Admin APIs**: User management, order management, email services, mail settings, contact submissions, analytics, admin services
 - **Content & Media**: CMS pages, blog, banners, media library (upload, optimize, resize, variants)
 - **Compliance**: GDPR, PCI, tax calculations, legal documents
 - **Customer Experience**: Product Q&A, size guides, videos, social proof, recently viewed, waitlist, product alerts
