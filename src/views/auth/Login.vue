@@ -1,112 +1,112 @@
 <template>
-  <div>
-    <Header />
-    <main class="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-sgBgDark py-12 px-4">
-    <div class="max-w-md w-full space-y-8">
-      <div>
-        <h2 class="mt-6 text-center text-3xl font-extrabold text-slate-900 dark:text-white">Sign in to your account</h2>
-      </div>
-      <form class="mt-8 space-y-6" @submit.prevent="handleLogin">
-        <!-- General error message -->
-        <div v-if="generalError" class="rounded-md bg-red-50 border border-red-200 p-4">
-          <div class="flex">
-            <div class="flex-shrink-0">
-              <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
-              </svg>
-            </div>
-            <div class="ml-3">
-              <p class="text-sm text-red-800">{{ generalError }}</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="rounded-md shadow-sm space-y-4">
-          <Input
-            id="email"
-            v-model="form.email"
-            type="email"
-            label="Email address"
-            placeholder="Enter your email"
-            required
-            :error="errors.email"
-          />
-          <Input
-            id="password"
-            v-model="form.password"
-            type="password"
-            label="Password"
-            placeholder="Enter your password"
-            required
-            :error="errors.password"
-          />
-        </div>
-
-        <div class="flex items-center justify-between">
-          <div class="flex items-center">
-            <input
-              id="remember-me"
-              v-model="rememberMe"
-              type="checkbox"
-              class="h-4 w-4 text-sgPrimary focus:ring-sgPrimary border-slate-300 dark:border-slate-600 rounded"
-            />
-            <label for="remember-me" class="ml-2 block text-sm text-slate-900 dark:text-white"> Remember me </label>
-          </div>
-
-          <div class="text-sm">
-            <router-link to="/forgot-password" class="font-medium text-sgPrimary hover:opacity-90">
-              Forgot your password?
-            </router-link>
-          </div>
-        </div>
-
+  <div class="min-h-screen flex flex-col bg-sgBgLight dark:bg-sgBgDark text-slate-900 dark:text-slate-100 font-display">
+    <HeaderTemp4 />
+    <main class="flex-1 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-10">
+      <div class="max-w-md w-full space-y-8">
         <div>
-          <Button type="submit" variant="primary" class="w-full" :loading="isLoading">
-            Sign in
-          </Button>
+          <h2 class="mt-6 text-center text-3xl font-extrabold text-slate-900 dark:text-white">Sign in to your account</h2>
         </div>
-
-        <div v-if="showSocialLogin" class="space-y-3">
-          <div class="relative">
-            <div class="absolute inset-0 flex items-center">
-            <div class="w-full border-t border-slate-200 dark:border-slate-700" />
-            </div>
-            <div class="relative flex justify-center text-sm">
-              <span class="bg-slate-50 dark:bg-sgBgDark px-2 text-slate-600 dark:text-slate-400">Or continue with</span>
+        <form class="mt-8 space-y-6" @submit.prevent="handleLogin">
+          <!-- General error message -->
+          <div v-if="generalError" class="rounded-md bg-red-50 border border-red-200 p-4">
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div class="ml-3">
+                <p class="text-sm text-red-800">{{ generalError }}</p>
+              </div>
             </div>
           </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div
-              v-if="googleSignIn.isAvailable"
-              ref="googleButtonRef"
-              class="min-h-[40px] flex items-center justify-center"
-              :class="{ 'sm:col-span-2': !microsoftSignIn.isAvailable }"
+
+          <div class="rounded-md shadow-sm space-y-4">
+            <Input
+              id="email"
+              v-model="form.email"
+              type="email"
+              label="Email address"
+              placeholder="Enter your email"
+              required
+              :error="errors.email"
             />
-            <Button
-              v-if="microsoftSignIn.isAvailable"
-              type="button"
-              variant="outline"
-              class="w-full"
-              :class="{ 'sm:col-span-2': !googleSignIn.isAvailable }"
-              :loading="isSocialLoading"
-              :disabled="isSocialLoading"
-              @click="handleMicrosoftSignIn"
-            >
-              Sign in with Microsoft
+            <Input
+              id="password"
+              v-model="form.password"
+              type="password"
+              label="Password"
+              placeholder="Enter your password"
+              required
+              :error="errors.password"
+            />
+          </div>
+
+          <div class="flex items-center justify-between">
+            <div class="flex items-center">
+              <input
+                id="remember-me"
+                v-model="rememberMe"
+                type="checkbox"
+                class="h-4 w-4 text-sgPrimary focus:ring-sgPrimary border-slate-300 dark:border-slate-600 rounded"
+              />
+              <label for="remember-me" class="ml-2 block text-sm text-slate-900 dark:text-white"> Remember me </label>
+            </div>
+
+            <div class="text-sm">
+              <router-link to="/forgot-password" class="font-medium text-sgPrimary hover:opacity-90">
+                Forgot your password?
+              </router-link>
+            </div>
+          </div>
+
+          <div>
+            <Button type="submit" variant="primary" class="w-full" :loading="isLoading">
+              Sign in
             </Button>
           </div>
-        </div>
 
-        <div class="text-center">
-          <span class="text-sm text-slate-600 dark:text-slate-400">Don't have an account? </span>
-          <router-link to="/register" class="font-medium text-sgPrimary hover:opacity-90">
-            Sign up
-          </router-link>
-        </div>
-      </form>
-    </div>
+          <div v-if="showSocialLogin" class="space-y-3">
+            <div class="relative">
+              <div class="absolute inset-0 flex items-center">
+                <div class="w-full border-t border-slate-200 dark:border-slate-700" />
+              </div>
+              <div class="relative flex justify-center text-sm">
+                <span class="bg-slate-50 dark:bg-sgBgDark px-2 text-slate-600 dark:text-slate-400">Or continue with</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div
+                v-if="googleSignIn.isAvailable"
+                ref="googleButtonRef"
+                class="min-h-[40px] flex items-center justify-center"
+                :class="{ 'sm:col-span-2': !microsoftSignIn.isAvailable }"
+              />
+              <Button
+                v-if="microsoftSignIn.isAvailable"
+                type="button"
+                variant="outline"
+                class="w-full"
+                :class="{ 'sm:col-span-2': !googleSignIn.isAvailable }"
+                :loading="isSocialLoading"
+                :disabled="isSocialLoading"
+                @click="handleMicrosoftSignIn"
+              >
+                Sign in with Microsoft
+              </Button>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <span class="text-sm text-slate-600 dark:text-slate-400">Don't have an account? </span>
+            <router-link to="/register" class="font-medium text-sgPrimary hover:opacity-90">
+              Sign up
+            </router-link>
+          </div>
+        </form>
+      </div>
     </main>
-    <Footer />
+    <FooterTemp4 />
   </div>
 </template>
 
@@ -118,8 +118,8 @@ import { useUIStore } from '@/stores/ui'
 import { authApi } from '@/api/endpoints/auth'
 import Button from '@/components/common/Button.vue'
 import Input from '@/components/common/Input.vue'
-import Header from '@/components/layout/Header.vue'
-import Footer from '@/components/layout/Footer.vue'
+import HeaderTemp4 from '@/components/layout/temp4/HeaderTemp4.vue'
+import FooterTemp4 from '@/components/layout/temp4/FooterTemp4.vue'
 import type { AxiosError } from 'axios'
 import { getValidationErrors, getAuthErrorMessage } from '@/utils/errorHandler'
 import { sendToTerminal } from '@/utils/apiLogger'

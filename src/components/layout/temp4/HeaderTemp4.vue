@@ -3,9 +3,11 @@
     <div class="flex items-center justify-between gap-4">
       <div class="flex items-center gap-8">
         <router-link to="/" class="flex items-center gap-2 text-slate-900 dark:text-white">
-          <div class="size-8 bg-sgPrimary rounded-lg flex items-center justify-center text-white">
-            <span class="material-symbols-outlined text-xl">shield</span>
-          </div>
+          <img
+            src="/mainlogo.png"
+            alt="MXR Services"
+            class="w-8 h-8 rounded-lg object-contain"
+          />
           <span class="text-lg font-bold leading-tight tracking-tight">MXR Services</span>
         </router-link>
         <nav class="hidden md:flex items-center gap-6">

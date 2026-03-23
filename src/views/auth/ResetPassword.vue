@@ -1,37 +1,37 @@
 <template>
-  <div>
-    <Header />
-    <main class="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-sgBgDark py-12 px-4">
-    <div class="max-w-md w-full space-y-8">
-      <div>
-        <h2 class="mt-6 text-center text-3xl font-extrabold text-slate-900 dark:text-white">Reset Password</h2>
+  <div class="min-h-screen flex flex-col bg-sgBgLight dark:bg-sgBgDark text-slate-900 dark:text-slate-100 font-display">
+    <HeaderTemp4 />
+    <main class="flex-1 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-10">
+      <div class="max-w-md w-full space-y-8">
+        <div>
+          <h2 class="mt-6 text-center text-3xl font-extrabold text-slate-900 dark:text-white">Reset Password</h2>
+        </div>
+        <form class="mt-8 space-y-6" @submit.prevent="handleSubmit">
+          <Input
+            id="password"
+            v-model="form.password"
+            type="password"
+            label="New Password"
+            placeholder="Enter new password"
+            required
+            :error="errors.password"
+          />
+          <Input
+            id="confirmPassword"
+            v-model="form.confirmPassword"
+            type="password"
+            label="Confirm Password"
+            placeholder="Confirm new password"
+            required
+            :error="errors.confirmPassword"
+          />
+          <Button type="submit" variant="primary" class="w-full" :loading="isLoading">
+            Reset Password
+          </Button>
+        </form>
       </div>
-      <form class="mt-8 space-y-6" @submit.prevent="handleSubmit">
-        <Input
-          id="password"
-          v-model="form.password"
-          type="password"
-          label="New Password"
-          placeholder="Enter new password"
-          required
-          :error="errors.password"
-        />
-        <Input
-          id="confirmPassword"
-          v-model="form.confirmPassword"
-          type="password"
-          label="Confirm Password"
-          placeholder="Confirm new password"
-          required
-          :error="errors.confirmPassword"
-        />
-        <Button type="submit" variant="primary" class="w-full" :loading="isLoading">
-          Reset Password
-        </Button>
-      </form>
-    </div>
     </main>
-    <Footer />
+    <FooterTemp4 />
   </div>
 </template>
 
@@ -42,8 +42,8 @@ import { useUIStore } from '@/stores/ui'
 import { authApi } from '@/api/endpoints/auth'
 import Button from '@/components/common/Button.vue'
 import Input from '@/components/common/Input.vue'
-import Header from '@/components/layout/Header.vue'
-import Footer from '@/components/layout/Footer.vue'
+import HeaderTemp4 from '@/components/layout/temp4/HeaderTemp4.vue'
+import FooterTemp4 from '@/components/layout/temp4/FooterTemp4.vue'
 
 const router = useRouter()
 const route = useRoute()
