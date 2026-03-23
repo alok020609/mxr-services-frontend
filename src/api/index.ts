@@ -29,6 +29,9 @@ export { paymentsAdvancedApi } from './endpoints/payments-advanced'
 export { productManagementApi } from './endpoints/product-management'
 export { advancedProductsApi } from './endpoints/advanced-products'
 
+// Packages
+export { packagesApi } from './endpoints/packages'
+
 // Search & Discovery
 export { searchApi } from './endpoints/search'
 export { searchIndexApi } from './endpoints/search-index'
