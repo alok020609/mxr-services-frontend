@@ -139,9 +139,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="grid lg:grid-cols-2 gap-20 items-center">
             <div class="relative">
-              <div class="grid grid-cols-2 gap-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="space-y-4">
-                  <div class="h-64 rounded-3xl overflow-hidden bg-slate-200 dark:bg-slate-800">
+                  <div class="h-48 sm:h-64 rounded-3xl overflow-hidden bg-slate-200 dark:bg-slate-800">
                     <img class="w-full h-full object-cover" src="/camera_installation_1.png" alt="Service" />
                   </div>
                   <div class="bg-sgNavy p-6 rounded-3xl text-white">
@@ -154,7 +154,7 @@
                     <p class="text-3xl font-black mb-1">24/7</p>
                     <p class="text-xs uppercase tracking-widest opacity-80">Active Monitoring</p>
                   </div>
-                  <div class="h-64 rounded-3xl overflow-hidden bg-slate-200 dark:bg-slate-800">
+                  <div class="h-48 sm:h-64 rounded-3xl overflow-hidden bg-slate-200 dark:bg-slate-800">
                     <img class="w-full h-full object-cover" src="/door_lock_1.png" alt="Product" />
                   </div>
                 </div>
@@ -245,7 +245,7 @@
       <!-- CTA -->
       <section class="py-20 px-4">
         <div class="max-w-7xl mx-auto bg-sgPrimary rounded-[3rem] p-12 lg:p-24 relative overflow-hidden text-center">
-          <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-[600px] h-[600px] bg-white/10 rounded-full blur-3xl"></div>
+          <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-[90vw] h-[90vw] sm:w-[600px] sm:h-[600px] bg-white/10 rounded-full blur-3xl"></div>
           <div class="relative z-10 max-w-3xl mx-auto">
             <h2 class="text-4xl lg:text-6xl font-black text-white mb-8 tracking-tight">Ready to Secure Your Peace of Mind?</h2>
             <p class="text-xl text-white/80 mb-12">Book a free site survey today. No obligations, just expert advice on how to protect what matters most.</p>

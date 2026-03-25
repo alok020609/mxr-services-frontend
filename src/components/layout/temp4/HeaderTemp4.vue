@@ -52,7 +52,7 @@
         </div>
         <router-link
           to="/contact"
-          class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-sgPrimary text-white text-base font-bold hover:opacity-90 transition-opacity"
+          class="flex min-w-0 sm:min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-12 px-4 sm:px-6 bg-sgPrimary text-white text-sm sm:text-base font-bold hover:opacity-90 transition-opacity"
         >
           Get a Quote
         </router-link>

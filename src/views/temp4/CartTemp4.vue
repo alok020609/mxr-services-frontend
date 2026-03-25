@@ -144,7 +144,7 @@
         </div>
 
         <div class="lg:col-span-1">
-          <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-sgBgDark p-6 shadow-sm sticky top-24">
+          <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-sgBgDark p-6 shadow-sm lg:sticky top-24">
             <h2 class="text-xl font-bold mb-4 text-slate-900 dark:text-white">Order Summary</h2>
             <p v-if="selectedCount < itemCount" class="text-sm text-slate-600 dark:text-slate-400 mb-2">
               {{ selectedCount }} of {{ itemCount }} items selected for checkout. Unselected items will remain in your cart.

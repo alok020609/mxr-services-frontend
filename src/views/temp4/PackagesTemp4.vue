@@ -54,7 +54,7 @@
             <div
               v-for="plan in plans"
               :key="plan.name"
-              class="flex flex-col gap-6 rounded-xl border bg-white dark:bg-slate-900 p-8 shadow-sm transition-shadow hover:shadow-md"
+              class="flex flex-col gap-6 rounded-xl border bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm transition-shadow hover:shadow-md"
               :class="plan.isPopular
                 ? 'border-2 border-sgPrimary shadow-lg relative transform scale-105 z-10'
                 : 'border-slate-200 dark:border-slate-800'"
@@ -65,7 +65,7 @@
               <div class="flex flex-col gap-2">
                 <div class="flex flex-col gap-1">
                   <h3 class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider">{{ plan.category }}</h3>
-                  <h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight">{{ plan.name }}</h2>
+                  <h2 class="text-slate-900 dark:text-white text-lg sm:text-xl font-bold leading-tight">{{ plan.name }}</h2>
                 </div>
                 <p class="flex items-baseline gap-1 text-slate-900 dark:text-white mt-4">
                   <span class="text-2xl font-black tracking-tight">Rs. {{ plan.price }}</span>
@@ -74,7 +74,7 @@
               </div>
               <button
                 type="button"
-                class="w-full flex cursor-pointer items-center justify-center rounded-lg h-11 px-4 text-sm font-bold transition-all"
+                class="w-full flex cursor-pointer items-center justify-center rounded-lg h-10 sm:h-11 px-4 text-sm font-bold transition-all"
                 :class="plan.isPopular
                   ? 'bg-sgPrimary text-white hover:opacity-90'
                   : 'bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-sgPrimary hover:text-white'"

@@ -1,8 +1,8 @@
 <template>
   <footer class="bg-sgNavy text-slate-400 pt-16 pb-12 mt-auto">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 pb-12 border-b border-slate-800">
-        <div class="col-span-2 md:col-span-1">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 pb-12 border-b border-slate-800">
+        <div class="col-span-1 sm:col-span-2 md:col-span-1">
           <div class="flex items-center gap-2 text-white mb-4">
             <div class="size-6 bg-sgPrimary rounded flex items-center justify-center text-white">
               <span class="material-symbols-outlined text-sm">shield</span>

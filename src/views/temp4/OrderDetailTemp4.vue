@@ -39,6 +39,7 @@
             <div class="flex flex-wrap gap-3">
               <Button
                 variant="primary"
+                size="sm"
                 :loading="paymentLoading"
                 :disabled="cancelLoading"
                 @click="handleCompletePayment"
@@ -47,6 +48,7 @@
               </Button>
               <Button
                 variant="danger"
+                size="sm"
                 :loading="cancelLoading"
                 :disabled="paymentLoading"
                 @click="handleCancelOrder"
@@ -65,6 +67,7 @@
             </p>
             <Button
               variant="danger"
+              size="sm"
               :loading="cancelLoading"
               @click="handleCancelOrder"
             >
@@ -73,7 +76,7 @@
           </div>
 
           <div class="space-y-4">
-            <div v-for="item in order.items" :key="item.id" class="flex items-center gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
+            <div v-for="item in order.items" :key="item.id" class="flex flex-col sm:flex-row sm:items-center gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
               <img
                 v-if="item.product"
                 :src="item.product?.images?.[0] || '/placeholder.png'"

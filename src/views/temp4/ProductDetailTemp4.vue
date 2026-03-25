@@ -51,7 +51,12 @@
             <p v-if="product.category" class="mt-2 text-sm font-bold uppercase tracking-wider text-sgPrimary">{{ product.category.name }}</p>
             <div class="mt-4 flex items-baseline gap-3">
               <span class="text-3xl font-black text-slate-900 dark:text-white">{{ formatPrice(product.price) }}</span>
-              <span v-if="product.compareAtPrice != null && product.compareAtPrice > product.price" class="text-lg text-slate-400 line-through">{{ formatPrice(product.compareAtPrice) }}</span>
+              <span
+                v-if="product.compareAtPrice != null && product.compareAtPrice > product.price"
+                class="text-base sm:text-lg text-slate-400 line-through"
+              >
+                {{ formatPrice(product.compareAtPrice) }}
+              </span>
             </div>
             <p class="mt-6 text-slate-600 dark:text-slate-400">{{ product.description }}</p>
 
@@ -79,7 +84,7 @@
                 >
                   <span class="material-symbols-outlined">remove</span>
                 </button>
-                <span class="w-12 text-center text-lg font-semibold">{{ quantity }}</span>
+                <span class="w-12 text-center text-base sm:text-lg font-semibold">{{ quantity }}</span>
                 <button
                   type="button"
                   :disabled="quantity >= product.stock"
@@ -97,7 +102,7 @@
                 v-if="product.stock > 0"
                 type="button"
                 :disabled="isAdding"
-                class="w-full rounded-xl bg-sgPrimary py-4 text-lg font-bold text-white hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                class="w-full rounded-xl bg-sgPrimary py-3 sm:py-4 text-base sm:text-lg font-bold text-white hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 @click="addToCart"
               >
                 <span v-if="isAdding" class="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-transparent" />
@@ -106,7 +111,7 @@
               </button>
               <router-link
                 to="/products"
-                class="w-full rounded-xl border-2 border-slate-200 dark:border-slate-700 py-4 text-lg font-bold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-center"
+                class="w-full rounded-xl border-2 border-slate-200 dark:border-slate-700 py-3 sm:py-4 text-base sm:text-lg font-bold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-center"
               >
                 Back to products
               </router-link>
