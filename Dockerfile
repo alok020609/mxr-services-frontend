@@ -17,7 +17,7 @@ COPY . .
 # Build arguments for environment variables
 # These are passed at build time and baked into the build
 ARG VITE_API_BASE_URL=http://localhost:3000/api/v1
-ARG VITE_APP_NAME=Ecommerce Store
+ARG VITE_APP_NAME=MXR Services
 ARG VITE_APP_VERSION=1.0.0
 ARG VITE_ENABLE_FEATURES=all
 ARG VITE_DEFAULT_CURRENCY=USD

@@ -6,7 +6,7 @@ export const env = {
   apiBaseUrl: import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api/v1',
   
   // Application Configuration
-  appName: import.meta.env.VITE_APP_NAME || 'Ecommerce Store',
+  appName: import.meta.env.VITE_APP_NAME || 'MXR Services',
   appVersion: import.meta.env.VITE_APP_VERSION || '1.0.0',
   
   // Feature Flags

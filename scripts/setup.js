@@ -110,7 +110,7 @@ async function main() {
     console.log(`\n${colors.cyan}📝 Optional: Configure additional settings?${colors.reset}`);
     const configureMore = await question('Do you want to configure app name, currency, etc.? (y/N): ');
     if (configureMore.toLowerCase() === 'y') {
-      const appName = await question('App Name (default: Ecommerce Store): ') || 'Ecommerce Store';
+      const appName = await question('App Name (default: MXR Services): ') || 'MXR Services';
       envContent = envContent.replace(/VITE_APP_NAME=.*/, `VITE_APP_NAME=${appName}`);
 
       const currency = await question('Default Currency (default: USD): ') || 'USD';

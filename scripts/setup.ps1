@@ -84,9 +84,9 @@ if (-not $skipEnv) {
     Write-Host "📝 Optional: Configure additional settings?" -ForegroundColor Cyan
     $response = Read-Host "Do you want to configure app name, currency, etc.? (y/N)"
     if ($response -eq "y" -or $response -eq "Y") {
-        $appName = Read-Host "App Name (default: Ecommerce Store)"
+        $appName = Read-Host "App Name (default: MXR Services)"
         if ([string]::IsNullOrWhiteSpace($appName)) {
-            $appName = "Ecommerce Store"
+            $appName = "MXR Services"
         }
         $envContent = $envContent -replace "VITE_APP_NAME=.*", "VITE_APP_NAME=$appName"
         

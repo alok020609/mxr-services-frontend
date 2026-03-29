@@ -105,8 +105,8 @@ if [ "$SKIP_ENV" = false ]; then
     read -p "Do you want to configure app name, currency, etc.? (y/N): " -n 1 -r
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-        read -p "App Name (default: Ecommerce Store): " app_name
-        app_name=${app_name:-Ecommerce Store}
+        read -p "App Name (default: MXR Services): " app_name
+        app_name=${app_name:-MXR Services}
         if [[ "$OSTYPE" == "darwin"* ]]; then
             sed -i '' "s|VITE_APP_NAME=.*|VITE_APP_NAME=$app_name|" .env
         else

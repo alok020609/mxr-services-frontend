@@ -125,7 +125,7 @@ Create a `.env` file in the root directory:
 VITE_API_BASE_URL=http://localhost:3000/api/v1
 
 # Application Configuration
-VITE_APP_NAME=Ecommerce Store
+VITE_APP_NAME=MXR Services
 VITE_APP_VERSION=1.0.0
 
 # Feature Flags (comma-separated or 'all')
